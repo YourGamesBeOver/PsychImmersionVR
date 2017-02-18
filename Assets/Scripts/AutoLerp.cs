@@ -1,0 +1,29 @@
+﻿using UnityEngine;
+
+public class AutoLerp : MonoBehaviour {
+
+    public Transform Target;
+    public bool SnapOnStart = false;
+
+    public float SmoothTime = 0.5f;
+    public float MaxSpeed = 100f;
+    public float SlerpTime = 10f;
+
+
+    private Vector3 _curVelocity = Vector3.zero;
+
+    void Start()
+    {
+        if (SnapOnStart)
+        {
+            transform.position = Target.position;
+            transform.rotation = Target.rotation;
+        }
+    }
+
+    void LateUpdate () {
+        transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref _curVelocity, SmoothTime, MaxSpeed, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Target.rotation, SlerpTime*Time.deltaTime);
+	}
+
+}
