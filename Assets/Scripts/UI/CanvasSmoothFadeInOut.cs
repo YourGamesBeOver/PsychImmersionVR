@@ -26,6 +26,7 @@ namespace UI
 
         public void FadeOut()
         {
+            if (!gameObject.activeInHierarchy) return;
             StopAllCoroutines();
             StartCoroutine(FadeOutCorutine());
         }

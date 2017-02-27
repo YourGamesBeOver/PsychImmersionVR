@@ -9,6 +9,7 @@ namespace CrossPlatformInput
     /// <summary>
     /// This script manages input for Vive (OpenVR) controllers, Oculus Remote, and Xbox controllers
     /// </summary>
+    [DefaultExecutionOrder(-16000)]
     public class CrossPlatformInputManager : MonoBehaviour
     {
         [Tooltip("Set this to true to log when controllers are connected and disconnected and also display errors when no controllers are connected")]
@@ -55,7 +56,8 @@ namespace CrossPlatformInput
         public bool NextButtonDown { get; private set; }
         public bool BackButtonDown { get; private set; }
 
-
+        public float LookX { get; private set; }
+        public float LookY { get; private set; }
 
         //Variables to keep track of the value of the various buttons last frame so we only fire events on the first frame the buttons are pressed
         private int _lastUpDownValue = 0;
@@ -63,6 +65,7 @@ namespace CrossPlatformInput
         private bool _backButtonPressed = false;
 
         private const float TriggerThreshold = 0.75f;
+        private const float StickDeadZone = 0.1f;
 
         private static CrossPlatformInputManager _instance;
 
@@ -114,6 +117,23 @@ namespace CrossPlatformInput
             DoUpDownInput();
             DoNextLevelInput();
             DoBackButtonInput();
+            DoLookInput();
+        }
+
+        /// <summary>
+        /// Look input is only done in non-vr mode, so we only poll the xbox controllers
+        /// </summary>
+        private void DoLookInput() {
+            var x = 0f;
+            var y = 0f;
+            foreach(var jn in _xboxJoystickNumbers) {
+                var xin = Input.GetAxis("Joystick " + jn + " Axis 4");
+                var yin = Input.GetAxis("Joystick " + jn + " Axis 5");
+                if (Mathf.Abs(xin) > StickDeadZone && Mathf.Abs(xin) > Mathf.Abs(x)) x = xin;
+                if (Mathf.Abs(yin) > StickDeadZone && Mathf.Abs(yin) > Mathf.Abs(y)) y = yin;
+            }
+            LookX = x;
+            LookY = y;
         }
 
         #region Up/Down Input
