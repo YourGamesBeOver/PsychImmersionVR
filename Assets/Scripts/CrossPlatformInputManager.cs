@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 /// <summary>
@@ -9,12 +10,14 @@ using UnityEngine.UI;
 /// </summary>
 public class CrossPlatformInputManager : MonoBehaviour
 {
-    [Tooltip("Optional")]
-    public Text ErrorText;
-    [Tooltip("Optional")]
-    public GameObject ErrorTextObject;
     [Tooltip("Set this to true to log when controllers are connected and disconnected and also display errors when no controllers are connected")]
     public bool ReportControllerChanges = true;
+
+    //this event is fired on controller errors
+    //the parameter is a discription of the error
+    public UnityEvent<string> OnError;
+    //this event will be fired when the error has been resolved
+    public UnityEvent OnErrorCleared;
 
     //joystick numbers for the various controllers, zero means not connected
     private int _leftViveJoystickNumber = 0;
@@ -23,8 +26,6 @@ public class CrossPlatformInputManager : MonoBehaviour
 
     //there may be multiple xbox controllers, so we will store them in a list
     private readonly List<int> _xboxJoystickNumbers = new List<int>();
-
-    private bool _errorShown = false;
 
     //zero means not connected
     public bool OculusRemoteConnected {get { return _oculusRemoteJoystickNumber > 0; } }
@@ -361,16 +362,12 @@ public class CrossPlatformInputManager : MonoBehaviour
 
     private void SetErrorText(string text)
     {
-        
-        if (!_errorShown && ErrorTextObject != null) ErrorTextObject.SetActive(true);
-        _errorShown = true;
-        if (ErrorText != null) ErrorText.text = text;
+        if(OnError != null) OnError.Invoke(text);
     }
 
     private void ClearError()
     {
-        if (_errorShown && ErrorTextObject != null) ErrorTextObject.SetActive(false);
-        _errorShown = false;
+        if(OnErrorCleared != null) OnErrorCleared.Invoke();
     }
 
     private const string OculusRemoteJoystickName = "Oculus Remote";

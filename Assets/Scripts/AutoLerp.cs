@@ -3,7 +3,7 @@
 public class AutoLerp : MonoBehaviour {
 
     public Transform Target;
-    public bool SnapOnStart = false;
+    public bool SnapOnEnable = false;
 
     public float SmoothTime = 0.5f;
     public float MaxSpeed = 100f;
@@ -12,9 +12,9 @@ public class AutoLerp : MonoBehaviour {
 
     private Vector3 _curVelocity = Vector3.zero;
 
-    void Start()
+    void OnEnable()
     {
-        if (SnapOnStart)
+        if (SnapOnEnable)
         {
             transform.position = Target.position;
             transform.rotation = Target.rotation;

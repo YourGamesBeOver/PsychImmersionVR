@@ -27,6 +27,12 @@ public class CanvasSmoothFadeInOut : MonoBehaviour
         StartCoroutine(FadeOutCorutine());
     }
 
+    public void FadeIn()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInCorutine());
+    }
+
     private IEnumerator FadeInCorutine()
     {
         float time = 0;
