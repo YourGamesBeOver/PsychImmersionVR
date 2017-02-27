@@ -5,12 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// This script manages input for Vive (OpenVR) controllers and the Oculus Remote
+/// This script manages input for Vive (OpenVR) controllers, Oculus Remote, and Xbox controllers
 /// </summary>
 public class CrossPlatformInputManager : MonoBehaviour
 {
-
+    [Tooltip("Optional")]
     public Text ErrorText;
+    [Tooltip("Optional")]
     public GameObject ErrorTextObject;
     [Tooltip("Set this to true to log when controllers are connected and disconnected and also display errors when no controllers are connected")]
     public bool ReportControllerChanges = true;
@@ -58,6 +59,7 @@ public class CrossPlatformInputManager : MonoBehaviour
     private bool _nextButtonPressed = false;
     private bool _backButtonPressed = false;
 
+    private const float TriggerThreshold = 0.75f;
 
     private static CrossPlatformInputManager _instance;
 
@@ -251,7 +253,15 @@ public class CrossPlatformInputManager : MonoBehaviour
     }
 
     private bool PollXboxBackButton() {
-        return _xboxJoystickNumbers.Any(jn => Input.GetKey("joystick " + jn + " button 1"));
+        foreach (var n in _xboxJoystickNumbers)
+        {
+            if (Input.GetKey("joystick " + n + " button 1")) return true; //check b button
+
+            var left = Input.GetAxis("Joystick " + n + " Axis 9");
+            var right = Input.GetAxis("Joystick " + n + " Axis 10");
+            if (left > TriggerThreshold && right > TriggerThreshold) return true; //check triggers
+        }
+        return false;
     }
 
     private bool PollBackButton()
