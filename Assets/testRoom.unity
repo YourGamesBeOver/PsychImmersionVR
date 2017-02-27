@@ -132,7 +132,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
-  m_SpotAngle: 158.6
+  m_SpotAngle: 172.1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -331,7 +331,7 @@ Transform:
   m_LocalScale: {x: 7.775981, y: 7.7759924, z: 7.7759924}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!108 &509383544
 Light:
@@ -345,7 +345,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
-  m_SpotAngle: 158.6
+  m_SpotAngle: 172.1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -1483,7 +1483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4139856615414532, guid: 008fb597a2444a84aaddfff032bd7639, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 008fb597a2444a84aaddfff032bd7639, type: 2}
