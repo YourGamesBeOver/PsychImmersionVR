@@ -4,6 +4,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VR;
+using CrossPlatformInput;
 
 [RequireComponent(typeof(Text))]
 public class InputTest : MonoBehaviour {

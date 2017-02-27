@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114897714207443940}
   - component: {fileID: 114569973198730474}
   m_Layer: 5
-  m_Name: TextCanvas
+  m_Name: DebugTextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,6 +298,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa89a28f78d775640929fc5c88b8cb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisableOverride:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  EnableOveride:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!222 &222166387255683264
 CanvasRenderer:
   m_ObjectHideFlags: 1

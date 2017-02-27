@@ -1,58 +1,63 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(CanvasGroup))]
-public class CanvasSmoothFadeInOut : MonoBehaviour
+namespace UI
 {
-    public float Duration = 2f;
-
-    private CanvasGroup _group;
-    private float _targetAlpha = 1;
-
-    void Awake()
+    [RequireComponent(typeof(CanvasGroup))]
+    public class CanvasSmoothFadeInOut : MonoBehaviour
     {
-        _group = GetComponent<CanvasGroup>();
-        _targetAlpha = _group.alpha;
-    }
+        public float Duration = 2f;
+        public bool DisableWhenInvisible = true;
 
-    private void OnEnable()
-    {
-        _group.alpha = 0;
-        StartCoroutine(FadeInCorutine());
-    }
+        private CanvasGroup _group;
+        private float _targetAlpha = 1;
 
-    public void FadeOut()
-    {
-        StopAllCoroutines();
-        StartCoroutine(FadeOutCorutine());
-    }
-
-    public void FadeIn()
-    {
-        StopAllCoroutines();
-        StartCoroutine(FadeInCorutine());
-    }
-
-    private IEnumerator FadeInCorutine()
-    {
-        float time = 0;
-        while (time < Duration)
+        void Awake()
         {
-            _group.alpha = Mathf.Lerp(0f, _targetAlpha, time/Duration);
-            yield return null;
-            time += Time.deltaTime;
+            _group = GetComponent<CanvasGroup>();
+            _targetAlpha = _group.alpha;
         }
-        _group.alpha = _targetAlpha;
-    }
 
-    private IEnumerator FadeOutCorutine() {
-        float time = 0;
-        while (time < Duration) {
-            _group.alpha = Mathf.Lerp(_targetAlpha, 0f, time / Duration);
-            yield return null;
-            time += Time.deltaTime;
+        private void OnEnable()
+        {
+            _group.alpha = 0;
+            StartCoroutine(FadeInCorutine());
         }
-        _group.alpha = 0f;
-        gameObject.SetActive(false);
+
+        public void FadeOut()
+        {
+            StopAllCoroutines();
+            StartCoroutine(FadeOutCorutine());
+        }
+
+        public void FadeIn()
+        {
+            if (!gameObject.activeInHierarchy && DisableWhenInvisible) gameObject.SetActive(true);
+            StopAllCoroutines();
+            StartCoroutine(FadeInCorutine());
+        }
+
+        private IEnumerator FadeInCorutine()
+        {
+            float time = 0;
+            while (time < Duration)
+            {
+                _group.alpha = Mathf.Lerp(0f, _targetAlpha, time/Duration);
+                yield return null;
+                time += Time.deltaTime;
+            }
+            _group.alpha = _targetAlpha;
+        }
+
+        private IEnumerator FadeOutCorutine() {
+            float time = 0;
+            while (time < Duration) {
+                _group.alpha = Mathf.Lerp(_targetAlpha, 0f, time / Duration);
+                yield return null;
+                time += Time.deltaTime;
+            }
+            _group.alpha = 0f;
+            if(DisableWhenInvisible)gameObject.SetActive(false);
+        }
     }
 }

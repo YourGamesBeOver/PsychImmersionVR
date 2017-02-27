@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using CrossPlatformInput;
 
 public class InputTest2 : MonoBehaviour {
 
