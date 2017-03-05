@@ -1,0 +1,23 @@
+Thank you for supporting us!
+In return we will bring you many more animals and updates for existing animals.
+
+
+If you like our stuff, you could further help by:
+- letting your friends know
+- like/+/tweet our animals
+- buy some stuff and rate us on the market  :)
+
+
+
+
+You can find a short overview, description and intended usage of the animations here - http://gim-gamesinmotion.com/animals/
+
+
+Textures naming scheme:
+-D = diffuse
+-N = normal map
+-M = metallic
+-MS = mettalic + smoothness
+-H = height
+-SSS = sub surface scattering
+-AO = occlusion
