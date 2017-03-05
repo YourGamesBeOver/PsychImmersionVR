@@ -37,8 +37,11 @@ GameObject:
   - component: {fileID: 4139856615414532}
   - component: {fileID: 114461802389701782}
   - component: {fileID: 114838439362727114}
+  - component: {fileID: 114320051480786096}
+  - component: {fileID: 114747009021923002}
+  - component: {fileID: 114025842734302996}
   m_Layer: 0
-  m_Name: '[SteamVR]'
+  m_Name: VRManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1453484370250290
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4054842764464730
 Transform:
   m_ObjectHideFlags: 1
@@ -191,6 +194,26 @@ Transform:
   m_Father: {fileID: 4054842764464730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114025842734302996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377592247191578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queueAhead: 1
+  useRecommendedMSAALevel: 0
+  enableAdaptiveResolution: 0
+  maxRenderScale: 1
+  minRenderScale: 0.7
+  _trackingOriginType: 1
+  usePositionTracking: 1
+  useIPDInPositionTracking: 1
+  resetTrackerOnLoad: 0
 --- !u!114 &114028648289061838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1428550671627870}
   right: {fileID: 1998504590956842}
-  objects: []
+  objects:
+  - {fileID: 1998504590956842}
+  - {fileID: 1428550671627870}
   assignAllBeforeIdentified: 0
 --- !u!114 &114310096832510338
 MonoBehaviour:
@@ -237,6 +262,18 @@ MonoBehaviour:
   index: -1
   origin: {fileID: 0}
   isValid: 0
+--- !u!114 &114320051480786096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377592247191578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9b766e3aa638941994e6ddeb3eecb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToggleKey: 114
 --- !u!114 &114453305710919288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,7 +294,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377592247191578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e979227f3384fac4b8ca0b3550bf005c, type: 3}
   m_Name: 
@@ -266,7 +303,27 @@ MonoBehaviour:
   lockPhysicsUpdateRateToRenderFrequency: 1
   externalCamera: {fileID: 0}
   externalCameraConfigPath: externalcamera.cfg
-  trackingSpace: 1
+  trackingSpace: 0
+--- !u!114 &114747009021923002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377592247191578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queueAhead: 1
+  useRecommendedMSAALevel: 0
+  enableAdaptiveResolution: 0
+  maxRenderScale: 2
+  minRenderScale: 1
+  _trackingOriginType: 1
+  usePositionTracking: 1
+  useIPDInPositionTracking: 1
+  resetTrackerOnLoad: 0
 --- !u!114 &114838439362727114
 MonoBehaviour:
   m_ObjectHideFlags: 1

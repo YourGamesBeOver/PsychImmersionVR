@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace UI
+namespace PsychImmersion.UI
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class CanvasSmoothFadeInOut : MonoBehaviour

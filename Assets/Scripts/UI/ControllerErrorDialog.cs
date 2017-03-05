@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace PsychImmersion.UI
 {
     public class ControllerErrorDialog : MonoBehaviour
     {

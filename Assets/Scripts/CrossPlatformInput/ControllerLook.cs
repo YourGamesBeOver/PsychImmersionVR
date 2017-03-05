@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.VR;
 
-namespace CrossPlatformInput
+namespace PsychImmersion.CrossPlatformInput
 {
     public class ControllerLook : MonoBehaviour
     {

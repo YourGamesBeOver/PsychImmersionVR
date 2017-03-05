@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CrossPlatformInput
+namespace PsychImmersion.CrossPlatformInput
 {
     /// <summary>
     /// This script manages input for Vive (OpenVR) controllers, Oculus Remote, and Xbox controllers

@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.VR;
 
-[ExecuteInEditMode]
-public class VrRenderScaleAdjuster : MonoBehaviour
+namespace PsychImmersion.VR
 {
-
-    [SerializeField]
-    [Range(0.5f, 2f)]
-    private float _renderScale = 1f;
-
-    public float RenderScale
+    [ExecuteInEditMode]
+    public class VrRenderScaleAdjuster : MonoBehaviour
     {
-        get { return _renderScale; }
-        set
+
+        [SerializeField]
+        [Range(0.5f, 2f)]
+        private float _renderScale = 1f;
+
+        public float RenderScale
         {
-            _renderScale = value;
-            VRSettings.renderScale = value;
+            get { return _renderScale; }
+            set
+            {
+                _renderScale = value;
+                VRSettings.renderScale = value;
+            }
         }
-    }
 
-    private void OnValidate()
-    {
-        VRSettings.renderScale = _renderScale;
+        private void OnValidate()
+        {
+            VRSettings.renderScale = _renderScale;
+        }
     }
 }

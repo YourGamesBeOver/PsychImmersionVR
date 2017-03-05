@@ -3,18 +3,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR;
 
-public class LoadSceneIfVR : MonoBehaviour
+namespace PsychImmersion.VR
 {
-
-    public SceneAsset[] ScenesToLoad;
-
-    private void Start()
+    public class LoadSceneIfVR : MonoBehaviour
     {
-        if (!VRSettings.isDeviceActive) return;
-        foreach (var scene in ScenesToLoad)
+
+        public SceneAsset[] ScenesToLoad;
+
+        private void Start()
         {
-            if (!SceneManager.GetSceneByName(scene.name).isLoaded)
-                SceneManager.LoadScene(scene.name, LoadSceneMode.Additive);
+            if (!VRSettings.isDeviceActive) return;
+            foreach (var scene in ScenesToLoad)
+            {
+                if (!SceneManager.GetSceneByName(scene.name).isLoaded)
+                    SceneManager.LoadScene(scene.name, LoadSceneMode.Additive);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DebugScripts
+namespace PsychImmersion.DebugScripts
 {
     public class DebugToggle : MonoBehaviour
     {
