@@ -5,9 +5,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400202}
+  - component: {fileID: 400202}
   m_Layer: 0
   m_Name: bee_r_wingRoll_bone
   m_TagString: Untagged
@@ -20,9 +20,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400000}
+  - component: {fileID: 400000}
   m_Layer: 0
   m_Name: bee_r_wing-nub_bone
   m_TagString: Untagged
@@ -35,9 +35,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400200}
+  - component: {fileID: 400200}
   m_Layer: 0
   m_Name: bee_r_wing02_bone
   m_TagString: Untagged
@@ -50,9 +50,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400262}
+  - component: {fileID: 400262}
   m_Layer: 0
   m_Name: bee_r_wing01_bone
   m_TagString: Untagged
@@ -65,9 +65,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400002}
+  - component: {fileID: 400002}
   m_Layer: 0
   m_Name: bee_r_midleclaw-nub_bone
   m_TagString: Untagged
@@ -80,9 +80,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400220}
+  - component: {fileID: 400220}
   m_Layer: 0
   m_Name: bee_r_midleclaw_bone
   m_TagString: Untagged
@@ -95,9 +95,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400222}
+  - component: {fileID: 400222}
   m_Layer: 0
   m_Name: bee_r_midletoe_bone
   m_TagString: Untagged
@@ -110,9 +110,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400224}
+  - component: {fileID: 400224}
   m_Layer: 0
   m_Name: bee_r_midletarsus_bone
   m_TagString: Untagged
@@ -125,9 +125,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400226}
+  - component: {fileID: 400226}
   m_Layer: 0
   m_Name: bee_r_midletibia_bone
   m_TagString: Untagged
@@ -140,9 +140,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400268}
+  - component: {fileID: 400268}
   m_Layer: 0
   m_Name: bee_r_midlefemur_bone
   m_TagString: Untagged
@@ -155,9 +155,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400260}
+  - component: {fileID: 400260}
   m_Layer: 0
   m_Name: bee_r_midlecoxa_bone
   m_TagString: Untagged
@@ -170,9 +170,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400004}
+  - component: {fileID: 400004}
   m_Layer: 0
   m_Name: bee_r_hindclaw-nub_bone
   m_TagString: Untagged
@@ -185,9 +185,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400228}
+  - component: {fileID: 400228}
   m_Layer: 0
   m_Name: bee_r_hindclaw_controller 1
   m_TagString: Untagged
@@ -200,9 +200,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400230}
+  - component: {fileID: 400230}
   m_Layer: 0
   m_Name: bee_r_hindtoe_bone
   m_TagString: Untagged
@@ -215,9 +215,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400232}
+  - component: {fileID: 400232}
   m_Layer: 0
   m_Name: bee_r_hindtarsus_bone
   m_TagString: Untagged
@@ -230,9 +230,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400234}
+  - component: {fileID: 400234}
   m_Layer: 0
   m_Name: bee_r_hindtibia_bone
   m_TagString: Untagged
@@ -245,9 +245,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400236}
+  - component: {fileID: 400236}
   m_Layer: 0
   m_Name: bee_r_hindfemur_bone
   m_TagString: Untagged
@@ -260,9 +260,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400264}
+  - component: {fileID: 400264}
   m_Layer: 0
   m_Name: bee_r_hindcoxa_bone
   m_TagString: Untagged
@@ -275,9 +275,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400006}
+  - component: {fileID: 400006}
   m_Layer: 0
   m_Name: bee_r_claw-nub_bone
   m_TagString: Untagged
@@ -290,9 +290,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400212}
+  - component: {fileID: 400212}
   m_Layer: 0
   m_Name: bee_r_claw_bone
   m_TagString: Untagged
@@ -305,9 +305,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400214}
+  - component: {fileID: 400214}
   m_Layer: 0
   m_Name: bee_r_toe_bone
   m_TagString: Untagged
@@ -320,9 +320,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400216}
+  - component: {fileID: 400216}
   m_Layer: 0
   m_Name: bee_r_tarsus_bone
   m_TagString: Untagged
@@ -335,9 +335,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400218}
+  - component: {fileID: 400218}
   m_Layer: 0
   m_Name: bee_r_tibia_bone
   m_TagString: Untagged
@@ -350,9 +350,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400256}
+  - component: {fileID: 400256}
   m_Layer: 0
   m_Name: bee_r_femur_bone
   m_TagString: Untagged
@@ -365,9 +365,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400258}
+  - component: {fileID: 400258}
   m_Layer: 0
   m_Name: bee_r_coxa_bone
   m_TagString: Untagged
@@ -380,9 +380,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400146}
+  - component: {fileID: 400146}
   m_Layer: 0
   m_Name: bee_l_wingRoll_bone
   m_TagString: Untagged
@@ -395,9 +395,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400008}
+  - component: {fileID: 400008}
   m_Layer: 0
   m_Name: bee_l_wing-nub_bone
   m_TagString: Untagged
@@ -410,9 +410,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400144}
+  - component: {fileID: 400144}
   m_Layer: 0
   m_Name: bee_l_wing02_bone
   m_TagString: Untagged
@@ -425,9 +425,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400194}
+  - component: {fileID: 400194}
   m_Layer: 0
   m_Name: bee_l_wing01_bone
   m_TagString: Untagged
@@ -440,9 +440,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400010}
+  - component: {fileID: 400010}
   m_Layer: 0
   m_Name: bee_l_midleclaw-nub_bone
   m_TagString: Untagged
@@ -455,9 +455,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400162}
+  - component: {fileID: 400162}
   m_Layer: 0
   m_Name: bee_l_midleclaw_bone
   m_TagString: Untagged
@@ -470,9 +470,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400164}
+  - component: {fileID: 400164}
   m_Layer: 0
   m_Name: bee_l_midletoe_bone
   m_TagString: Untagged
@@ -485,9 +485,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400166}
+  - component: {fileID: 400166}
   m_Layer: 0
   m_Name: bee_l_midletarsus_bone
   m_TagString: Untagged
@@ -500,9 +500,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400168}
+  - component: {fileID: 400168}
   m_Layer: 0
   m_Name: bee_l_midletibia_bone
   m_TagString: Untagged
@@ -515,9 +515,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400192}
+  - component: {fileID: 400192}
   m_Layer: 0
   m_Name: bee_l_midlefemur_bone
   m_TagString: Untagged
@@ -530,9 +530,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400190}
+  - component: {fileID: 400190}
   m_Layer: 0
   m_Name: bee_l_midlecoxa_bone
   m_TagString: Untagged
@@ -545,9 +545,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400012}
+  - component: {fileID: 400012}
   m_Layer: 0
   m_Name: bee_l_hindclaw-nub_bone
   m_TagString: Untagged
@@ -560,9 +560,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400170}
+  - component: {fileID: 400170}
   m_Layer: 0
   m_Name: bee_l_hindclaw_bone
   m_TagString: Untagged
@@ -575,9 +575,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400172}
+  - component: {fileID: 400172}
   m_Layer: 0
   m_Name: bee_l_hindtoe_bone
   m_TagString: Untagged
@@ -590,9 +590,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400174}
+  - component: {fileID: 400174}
   m_Layer: 0
   m_Name: bee_l_hindtarsus_bone
   m_TagString: Untagged
@@ -605,9 +605,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400176}
+  - component: {fileID: 400176}
   m_Layer: 0
   m_Name: bee_l_hindtibia_bone
   m_TagString: Untagged
@@ -620,9 +620,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400178}
+  - component: {fileID: 400178}
   m_Layer: 0
   m_Name: bee_l_hindfemur_bone
   m_TagString: Untagged
@@ -635,9 +635,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400196}
+  - component: {fileID: 400196}
   m_Layer: 0
   m_Name: bee_l_hindcoxa_bone
   m_TagString: Untagged
@@ -650,9 +650,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400014}
+  - component: {fileID: 400014}
   m_Layer: 0
   m_Name: bee_l_claw-nub_bone
   m_TagString: Untagged
@@ -665,9 +665,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400154}
+  - component: {fileID: 400154}
   m_Layer: 0
   m_Name: bee_l_claw_bone
   m_TagString: Untagged
@@ -680,9 +680,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400156}
+  - component: {fileID: 400156}
   m_Layer: 0
   m_Name: bee_l_toe_bone
   m_TagString: Untagged
@@ -695,9 +695,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400158}
+  - component: {fileID: 400158}
   m_Layer: 0
   m_Name: bee_l_tarsus_bone
   m_TagString: Untagged
@@ -710,9 +710,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400160}
+  - component: {fileID: 400160}
   m_Layer: 0
   m_Name: bee_l_tibia_bone
   m_TagString: Untagged
@@ -725,9 +725,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400188}
+  - component: {fileID: 400188}
   m_Layer: 0
   m_Name: bee_l_femur_bone
   m_TagString: Untagged
@@ -740,9 +740,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400186}
+  - component: {fileID: 400186}
   m_Layer: 0
   m_Name: bee_l_coxa_bone
   m_TagString: Untagged
@@ -755,9 +755,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400016}
+  - component: {fileID: 400016}
   m_Layer: 0
   m_Name: bee_r_antenna-nub_bone
   m_TagString: Untagged
@@ -770,9 +770,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400210}
+  - component: {fileID: 400210}
   m_Layer: 0
   m_Name: bee_r_antenna07_bone
   m_TagString: Untagged
@@ -785,9 +785,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400238}
+  - component: {fileID: 400238}
   m_Layer: 0
   m_Name: bee_r_antenna06_bone
   m_TagString: Untagged
@@ -800,9 +800,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400204}
+  - component: {fileID: 400204}
   m_Layer: 0
   m_Name: bee_r_antenna05_bone
   m_TagString: Untagged
@@ -815,9 +815,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400242}
+  - component: {fileID: 400242}
   m_Layer: 0
   m_Name: bee_r_antenna04_bone
   m_TagString: Untagged
@@ -830,9 +830,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400206}
+  - component: {fileID: 400206}
   m_Layer: 0
   m_Name: bee_r_antenna03_bone
   m_TagString: Untagged
@@ -845,9 +845,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400208}
+  - component: {fileID: 400208}
   m_Layer: 0
   m_Name: bee_r_antenna02_bone
   m_TagString: Untagged
@@ -860,9 +860,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400240}
+  - component: {fileID: 400240}
   m_Layer: 0
   m_Name: bee_r_antenna01_bone
   m_TagString: Untagged
@@ -875,9 +875,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400018}
+  - component: {fileID: 400018}
   m_Layer: 0
   m_Name: bee_l_antenna-nub_bone
   m_TagString: Untagged
@@ -890,9 +890,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400198}
+  - component: {fileID: 400198}
   m_Layer: 0
   m_Name: bee_l_antenna07_bone
   m_TagString: Untagged
@@ -905,9 +905,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400180}
+  - component: {fileID: 400180}
   m_Layer: 0
   m_Name: bee_l_antenna06_bone
   m_TagString: Untagged
@@ -920,9 +920,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400148}
+  - component: {fileID: 400148}
   m_Layer: 0
   m_Name: bee_l_antenna05_bone
   m_TagString: Untagged
@@ -935,9 +935,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400184}
+  - component: {fileID: 400184}
   m_Layer: 0
   m_Name: bee_l_antenna04_bone
   m_TagString: Untagged
@@ -950,9 +950,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400150}
+  - component: {fileID: 400150}
   m_Layer: 0
   m_Name: bee_l_antenna03_bone
   m_TagString: Untagged
@@ -965,9 +965,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400152}
+  - component: {fileID: 400152}
   m_Layer: 0
   m_Name: bee_l_antenna02_bone
   m_TagString: Untagged
@@ -980,9 +980,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400182}
+  - component: {fileID: 400182}
   m_Layer: 0
   m_Name: bee_l_antenna01_bone
   m_TagString: Untagged
@@ -995,9 +995,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400020}
+  - component: {fileID: 400020}
   m_Layer: 0
   m_Name: bee_head-nub_bone
   m_TagString: Untagged
@@ -1010,9 +1010,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400254}
+  - component: {fileID: 400254}
   m_Layer: 0
   m_Name: bee_head_bone
   m_TagString: Untagged
@@ -1025,9 +1025,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400022}
+  - component: {fileID: 400022}
   m_Layer: 0
   m_Name: bee_abdomen-nub_bone
   m_TagString: Untagged
@@ -1040,9 +1040,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400252}
+  - component: {fileID: 400252}
   m_Layer: 0
   m_Name: bee_abdomen05_bone
   m_TagString: Untagged
@@ -1055,9 +1055,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400250}
+  - component: {fileID: 400250}
   m_Layer: 0
   m_Name: bee_abdomen04_bone
   m_TagString: Untagged
@@ -1070,9 +1070,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400248}
+  - component: {fileID: 400248}
   m_Layer: 0
   m_Name: bee_abdomen03_bone
   m_TagString: Untagged
@@ -1085,9 +1085,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400244}
+  - component: {fileID: 400244}
   m_Layer: 0
   m_Name: bee_abdomen02_bone
   m_TagString: Untagged
@@ -1100,9 +1100,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400246}
+  - component: {fileID: 400246}
   m_Layer: 0
   m_Name: bee_abdomen01_bone
   m_TagString: Untagged
@@ -1115,9 +1115,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400266}
+  - component: {fileID: 400266}
   m_Layer: 0
   m_Name: bee_thorax_bone
   m_TagString: Untagged
@@ -1130,9 +1130,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400024}
+  - component: {fileID: 400024}
   m_Layer: 0
   m_Name: bee_r_wingRoll_controller
   m_TagString: Untagged
@@ -1145,9 +1145,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400124}
+  - component: {fileID: 400124}
   m_Layer: 0
   m_Name: bee_r_wing01_controller
   m_TagString: Untagged
@@ -1160,9 +1160,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400026}
+  - component: {fileID: 400026}
   m_Layer: 0
   m_Name: IK Chain003
   m_TagString: Untagged
@@ -1175,9 +1175,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400030}
+  - component: {fileID: 400030}
   m_Layer: 0
   m_Name: bee_r_midletarsus_controller
   m_TagString: Untagged
@@ -1190,9 +1190,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400028}
+  - component: {fileID: 400028}
   m_Layer: 0
   m_Name: IK Chain004
   m_TagString: Untagged
@@ -1205,9 +1205,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400032}
+  - component: {fileID: 400032}
   m_Layer: 0
   m_Name: bee_r_midleclaw_controller
   m_TagString: Untagged
@@ -1220,9 +1220,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400034}
+  - component: {fileID: 400034}
   m_Layer: 0
   m_Name: bee_r_midleleg_controller
   m_TagString: Untagged
@@ -1235,9 +1235,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400126}
+  - component: {fileID: 400126}
   m_Layer: 0
   m_Name: bee_r_midlecoxa_controller
   m_TagString: Untagged
@@ -1250,9 +1250,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400036}
+  - component: {fileID: 400036}
   m_Layer: 0
   m_Name: IK Chain001
   m_TagString: Untagged
@@ -1265,9 +1265,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400040}
+  - component: {fileID: 400040}
   m_Layer: 0
   m_Name: bee_r_hindtarsus_controller
   m_TagString: Untagged
@@ -1280,9 +1280,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400038}
+  - component: {fileID: 400038}
   m_Layer: 0
   m_Name: IK Chain002
   m_TagString: Untagged
@@ -1295,9 +1295,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400042}
+  - component: {fileID: 400042}
   m_Layer: 0
   m_Name: bee_r_hindclaw_controller
   m_TagString: Untagged
@@ -1310,9 +1310,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400044}
+  - component: {fileID: 400044}
   m_Layer: 0
   m_Name: bee_r_hindleg_controller
   m_TagString: Untagged
@@ -1325,9 +1325,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400128}
+  - component: {fileID: 400128}
   m_Layer: 0
   m_Name: bee_r_hindcoxa_controller
   m_TagString: Untagged
@@ -1340,9 +1340,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400046}
+  - component: {fileID: 400046}
   m_Layer: 0
   m_Name: IK Chain005
   m_TagString: Untagged
@@ -1355,9 +1355,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400050}
+  - component: {fileID: 400050}
   m_Layer: 0
   m_Name: bee_r_tarsus_controller
   m_TagString: Untagged
@@ -1370,9 +1370,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400048}
+  - component: {fileID: 400048}
   m_Layer: 0
   m_Name: IK Chain006
   m_TagString: Untagged
@@ -1385,9 +1385,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400052}
+  - component: {fileID: 400052}
   m_Layer: 0
   m_Name: bee_r_claw_controller
   m_TagString: Untagged
@@ -1400,9 +1400,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400054}
+  - component: {fileID: 400054}
   m_Layer: 0
   m_Name: bee_r_leg_controller
   m_TagString: Untagged
@@ -1415,9 +1415,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400130}
+  - component: {fileID: 400130}
   m_Layer: 0
   m_Name: bee_r_coxa_controller
   m_TagString: Untagged
@@ -1430,9 +1430,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400056}
+  - component: {fileID: 400056}
   m_Layer: 0
   m_Name: bee_l_wingRoll_controller
   m_TagString: Untagged
@@ -1445,9 +1445,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400132}
+  - component: {fileID: 400132}
   m_Layer: 0
   m_Name: bee_l_wing01_controller
   m_TagString: Untagged
@@ -1460,9 +1460,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400058}
+  - component: {fileID: 400058}
   m_Layer: 0
   m_Name: IK Chain008
   m_TagString: Untagged
@@ -1475,9 +1475,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400062}
+  - component: {fileID: 400062}
   m_Layer: 0
   m_Name: bee_r_midletarsus_controller001
   m_TagString: Untagged
@@ -1490,9 +1490,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400060}
+  - component: {fileID: 400060}
   m_Layer: 0
   m_Name: IK Chain009
   m_TagString: Untagged
@@ -1505,9 +1505,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400064}
+  - component: {fileID: 400064}
   m_Layer: 0
   m_Name: bee_r_midleclaw_controller001
   m_TagString: Untagged
@@ -1520,9 +1520,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400066}
+  - component: {fileID: 400066}
   m_Layer: 0
   m_Name: bee_r_midleleg_controller001
   m_TagString: Untagged
@@ -1535,9 +1535,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400134}
+  - component: {fileID: 400134}
   m_Layer: 0
   m_Name: bee_l_midlecoxa_controller
   m_TagString: Untagged
@@ -1550,9 +1550,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400068}
+  - component: {fileID: 400068}
   m_Layer: 0
   m_Name: IK Chain011
   m_TagString: Untagged
@@ -1565,9 +1565,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400072}
+  - component: {fileID: 400072}
   m_Layer: 0
   m_Name: bee_r_hindtarsus_controller001
   m_TagString: Untagged
@@ -1580,9 +1580,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400070}
+  - component: {fileID: 400070}
   m_Layer: 0
   m_Name: IK Chain012
   m_TagString: Untagged
@@ -1595,9 +1595,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400074}
+  - component: {fileID: 400074}
   m_Layer: 0
   m_Name: bee_r_hindclaw_controller001
   m_TagString: Untagged
@@ -1610,9 +1610,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400076}
+  - component: {fileID: 400076}
   m_Layer: 0
   m_Name: bee_r_hindleg_controller001
   m_TagString: Untagged
@@ -1625,9 +1625,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400136}
+  - component: {fileID: 400136}
   m_Layer: 0
   m_Name: bee_l_hindcoxa_controller
   m_TagString: Untagged
@@ -1640,9 +1640,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400078}
+  - component: {fileID: 400078}
   m_Layer: 0
   m_Name: IK Chain007
   m_TagString: Untagged
@@ -1655,9 +1655,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400082}
+  - component: {fileID: 400082}
   m_Layer: 0
   m_Name: bee_r_tarsus_controller001
   m_TagString: Untagged
@@ -1670,9 +1670,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400080}
+  - component: {fileID: 400080}
   m_Layer: 0
   m_Name: IK Chain010
   m_TagString: Untagged
@@ -1685,9 +1685,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400084}
+  - component: {fileID: 400084}
   m_Layer: 0
   m_Name: bee_r_claw_controller001
   m_TagString: Untagged
@@ -1700,9 +1700,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400086}
+  - component: {fileID: 400086}
   m_Layer: 0
   m_Name: bee_r_leg_controller001
   m_TagString: Untagged
@@ -1715,9 +1715,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400138}
+  - component: {fileID: 400138}
   m_Layer: 0
   m_Name: bee_l_coxa_controller
   m_TagString: Untagged
@@ -1730,9 +1730,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400088}
+  - component: {fileID: 400088}
   m_Layer: 0
   m_Name: bee_r_antenna07_controller
   m_TagString: Untagged
@@ -1745,9 +1745,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400090}
+  - component: {fileID: 400090}
   m_Layer: 0
   m_Name: bee_r_antenna06_controller
   m_TagString: Untagged
@@ -1760,9 +1760,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400092}
+  - component: {fileID: 400092}
   m_Layer: 0
   m_Name: bee_r_antenna05_controller
   m_TagString: Untagged
@@ -1775,9 +1775,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400094}
+  - component: {fileID: 400094}
   m_Layer: 0
   m_Name: bee_r_antenna04_controller
   m_TagString: Untagged
@@ -1790,9 +1790,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400096}
+  - component: {fileID: 400096}
   m_Layer: 0
   m_Name: bee_r_antenna03_controller
   m_TagString: Untagged
@@ -1805,9 +1805,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400098}
+  - component: {fileID: 400098}
   m_Layer: 0
   m_Name: bee_r_antenna02_controller
   m_TagString: Untagged
@@ -1820,9 +1820,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400112}
+  - component: {fileID: 400112}
   m_Layer: 0
   m_Name: bee_r_antenna01_controller
   m_TagString: Untagged
@@ -1835,9 +1835,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400100}
+  - component: {fileID: 400100}
   m_Layer: 0
   m_Name: bee_l_antenna07_controller
   m_TagString: Untagged
@@ -1850,9 +1850,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400102}
+  - component: {fileID: 400102}
   m_Layer: 0
   m_Name: bee_l_antenna06_controller
   m_TagString: Untagged
@@ -1865,9 +1865,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400104}
+  - component: {fileID: 400104}
   m_Layer: 0
   m_Name: bee_l_antenna05_controller
   m_TagString: Untagged
@@ -1880,9 +1880,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400106}
+  - component: {fileID: 400106}
   m_Layer: 0
   m_Name: bee_l_antenna04_controller
   m_TagString: Untagged
@@ -1895,9 +1895,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400108}
+  - component: {fileID: 400108}
   m_Layer: 0
   m_Name: bee_l_antenna03_controller
   m_TagString: Untagged
@@ -1910,9 +1910,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400110}
+  - component: {fileID: 400110}
   m_Layer: 0
   m_Name: bee_l_antenna02_controller
   m_TagString: Untagged
@@ -1925,9 +1925,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400114}
+  - component: {fileID: 400114}
   m_Layer: 0
   m_Name: bee_l_antenna01_controller
   m_TagString: Untagged
@@ -1940,9 +1940,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400140}
+  - component: {fileID: 400140}
   m_Layer: 0
   m_Name: bee_head_controller
   m_TagString: Untagged
@@ -1955,9 +1955,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400116}
+  - component: {fileID: 400116}
   m_Layer: 0
   m_Name: bee_abdomen05_controller
   m_TagString: Untagged
@@ -1970,9 +1970,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400118}
+  - component: {fileID: 400118}
   m_Layer: 0
   m_Name: bee_abdomen04_controller
   m_TagString: Untagged
@@ -1985,9 +1985,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400120}
+  - component: {fileID: 400120}
   m_Layer: 0
   m_Name: bee_abdomen03_controller
   m_TagString: Untagged
@@ -2000,9 +2000,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400122}
+  - component: {fileID: 400122}
   m_Layer: 0
   m_Name: bee_abdomen02_controller
   m_TagString: Untagged
@@ -2015,9 +2015,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400142}
+  - component: {fileID: 400142}
   m_Layer: 0
   m_Name: bee_abdomen01_controller
   m_TagString: Untagged
@@ -2030,9 +2030,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400270}
+  - component: {fileID: 400270}
   m_Layer: 0
   m_Name: bee_Main_Controller
   m_TagString: Untagged
@@ -2045,11 +2045,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400272}
-  - 137: {fileID: 13700000}
-  - 95: {fileID: 9578068}
+  - component: {fileID: 400272}
+  - component: {fileID: 13700000}
+  - component: {fileID: 9578068}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -2062,13 +2062,12 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400274}
-  - 195: {fileID: 19579264}
-  - 114: {fileID: 11460054}
-  - 95: {fileID: 9516028}
-  - 54: {fileID: 5404010}
+  - component: {fileID: 400274}
+  - component: {fileID: 19579264}
+  - component: {fileID: 9516028}
+  - component: {fileID: 5404010}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -2967,7 +2966,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100176}
-  m_LocalRotation: {x: 0.2961319, y: -0.6421104, z: 0.7014995, w: 0.0888736}
+  m_LocalRotation: {x: 0.29613194, y: -0.64211047, z: 0.7014996, w: 0.08887361}
   m_LocalPosition: {x: 0.010176594, y: -0.022130832, z: 0.1166684}
   m_LocalScale: {x: -0.99999994, y: -1, z: -1}
   m_Children:
@@ -4069,17 +4068,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11460054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45626d1a070c2a14c81d3e1023a12ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -4089,12 +4077,15 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: c671f8bfda6ea29448bff6f17d1ef643, type: 2}
   - {fileID: 2100000, guid: 963d76e3fc7cd54488264aa4e23c174c, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4102,6 +4093,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4111,6 +4103,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: 2e02f66c66dd44a4c91b5eec30993f8d, type: 3}
   m_Bones:
   - {fileID: 400268}
