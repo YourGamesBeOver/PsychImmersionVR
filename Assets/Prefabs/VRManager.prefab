@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114838439362727114}
   - component: {fileID: 114320051480786096}
   - component: {fileID: 114747009021923002}
-  - component: {fileID: 114025842734302996}
+  - component: {fileID: 114778813891725950}
   m_Layer: 0
   m_Name: VRManager
   m_TagString: Untagged
@@ -194,26 +194,6 @@ Transform:
   m_Father: {fileID: 4054842764464730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114025842734302996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377592247191578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queueAhead: 1
-  useRecommendedMSAALevel: 0
-  enableAdaptiveResolution: 0
-  maxRenderScale: 1
-  minRenderScale: 0.7
-  _trackingOriginType: 1
-  usePositionTracking: 1
-  useIPDInPositionTracking: 1
-  resetTrackerOnLoad: 0
 --- !u!114 &114028648289061838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,7 +274,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377592247191578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e979227f3384fac4b8ca0b3550bf005c, type: 3}
   m_Name: 
@@ -316,14 +296,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queueAhead: 1
-  useRecommendedMSAALevel: 0
-  enableAdaptiveResolution: 0
+  useRecommendedMSAALevel: 1
+  enableAdaptiveResolution: 1
   maxRenderScale: 2
   minRenderScale: 1
   _trackingOriginType: 1
   usePositionTracking: 1
   useIPDInPositionTracking: 1
   resetTrackerOnLoad: 0
+--- !u!114 &114778813891725950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377592247191578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8047486b474a34f974d9c906da7608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyMode: 1
 --- !u!114 &114838439362727114
 MonoBehaviour:
   m_ObjectHideFlags: 1
