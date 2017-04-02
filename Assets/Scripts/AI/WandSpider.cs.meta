@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d496e7dc67e38eb459135363ad0e840d
+timeCreated: 1469626077
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - wall1: {fileID: 4000011830143800, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
+  - wall2: {fileID: 4000011330986554, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
+  - wall3: {fileID: 4000014030156990, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
+  - wall4: {fileID: 4000011814909106, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

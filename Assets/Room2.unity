@@ -146,7 +146,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967039
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: f904766c4e6d6d347bcfe48d79a7e758, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 0
@@ -728,18 +728,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 4000014198650746, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000014198650746, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000014198650746, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e4f9ae20efb21d4aae665ef3dc9a87b, type: 2}
   m_IsPrefabParent: 0
@@ -1178,7 +1166,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!23 &1151704449
 MeshRenderer:
@@ -2127,11 +2115,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 120118, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143704, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 189742, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -2139,11 +2127,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 111596, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192248, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 154562, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -2151,7 +2139,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 101354, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4073f41b7d930f94d9470df64ec12b53, type: 2}
