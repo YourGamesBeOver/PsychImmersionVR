@@ -18,6 +18,7 @@ namespace PsychImmersion.VR
                 if (!SceneManager.GetSceneByName(scene.name).isLoaded)
                     SceneManager.LoadScene(scene.name, LoadSceneMode.Additive);
             }
+            enabled = false;
         }
     }
 }

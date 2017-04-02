@@ -21,6 +21,9 @@ namespace PsychImmersion.DebugScripts
         private int frames = 0; // Frames drawn over the interval
         private float timeleft; // Left time for current interval
 
+        public float MinGoodFps = 89.75f;
+        public float MinAcceptableFps = 44.75f;
+
         public float FPS {
             get { return fps; }
         }
@@ -41,10 +44,10 @@ namespace PsychImmersion.DebugScripts
                 fps = accum / frames;
                 string color;
 
-                if (fps < 90) {
-                    color = "yellow";
-                } else if (fps < 45) {
+                if (fps < MinAcceptableFps) {
                     color = "red";
+                } else if (fps < MinGoodFps) {
+                    color = "yellow";
                 } else {
                     color = "green";
                 }
