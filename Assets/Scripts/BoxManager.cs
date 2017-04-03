@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace PsychImmersion
 {
+    [RequireComponent(typeof(Animation))]
     public class BoxManager : MonoBehaviour
     {
         private BoxState _curState;
+        private Animation _animation;
 
         public enum BoxState
         {
@@ -33,15 +35,27 @@ namespace PsychImmersion
             _curState = BoxState.Hidden;
             _targetDistanceFromPlayer = transform.position.z;
         }
-	
+
         // Update is called once per frame
         void Update () {
-		
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                TransitionToState(BoxState.Normal);
+            }
+        }
+
+        private void Awake()
+        {
+            _animation = GetComponent<Animation>();
         }
 
         public void TransitionToState(BoxState state)
         {
             _curState = state;
+            if (state == BoxState.Normal)
+            {
+                _animation.Play("TableRise");
+            }
         }
 
         public void SetDistanceFromPlayer(float newDistance)
