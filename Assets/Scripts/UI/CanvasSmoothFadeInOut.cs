@@ -8,6 +8,7 @@ namespace PsychImmersion.UI
     {
         public float Duration = 2f;
         public bool DisableWhenInvisible = true;
+        public bool InitiallyVisible = true;
 
         private CanvasGroup _group;
         private float _targetAlpha = 1;
@@ -21,7 +22,8 @@ namespace PsychImmersion.UI
         private void OnEnable()
         {
             _group.alpha = 0;
-            StartCoroutine(FadeInCorutine());
+            if(InitiallyVisible) StartCoroutine(FadeInCorutine());
+            if(!InitiallyVisible && DisableWhenInvisible) gameObject.SetActive(true);
         }
 
         public void FadeOut()

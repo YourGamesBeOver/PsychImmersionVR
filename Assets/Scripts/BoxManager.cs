@@ -5,8 +5,14 @@ using UnityEngine;
 namespace PsychImmersion
 {
     [RequireComponent(typeof(Animation))]
-    public class BoxManager : MonoBehaviour
+    public class BoxManager : DifficultySensitiveBehaviour
     {
+        //this is the transform that the animal prefab should be a child of
+        public Transform BoxRootTransform;
+
+        public GameObject BeePrefab, MousePrefab, SpiderPrefab;
+
+
         private BoxState _curState;
         private Animation _animation;
 
@@ -14,7 +20,8 @@ namespace PsychImmersion
         {
             Hidden,
             Normal,
-            Opened
+            Opened,
+            OnFloor
         }
 
         public float MoveSpeed = 0.1f;
@@ -44,9 +51,30 @@ namespace PsychImmersion
             }
         }
 
-        private void Awake()
+        public override void Awake()
         {
+            base.Awake();
             _animation = GetComponent<Animation>();
+        }
+
+        public override void SetLevel(Difficulity level)
+        {
+            switch (level)
+            {
+                case Difficulity.Adjustment:
+                    break;
+                case Difficulity.Beginner:
+                    TransitionToState(BoxState.Normal);
+                    break;
+                case Difficulity.Intermediate:
+                    TransitionToState(BoxState.Opened);
+                    break;
+                case Difficulity.Advanced:
+                    TransitionToState(BoxState.OnFloor);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("level", level, null);
+            }
         }
 
         public void TransitionToState(BoxState state)
@@ -86,6 +114,22 @@ namespace PsychImmersion
             oldPos.z = _targetDistanceFromPlayer;
             transform.position = oldPos;
             _boxIsMoving = false;
+        }
+
+        public void InstantiateAnimal(AnimalType type)
+        {
+            if ((type & AnimalType.Bee) == AnimalType.Bee)
+            {
+                Instantiate(BeePrefab, BoxRootTransform, false);
+            }
+            if ((type & AnimalType.Mouse) == AnimalType.Mouse)
+            {
+                Instantiate(MousePrefab, BoxRootTransform, false);
+            }
+            if ((type & AnimalType.Spider) == AnimalType.Spider)
+            {
+                Instantiate(SpiderPrefab, BoxRootTransform, false);
+            }
         }
     }
 }

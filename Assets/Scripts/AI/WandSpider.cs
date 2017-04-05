@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PsychImmersion;
 
-public class WandSpider : MonoBehaviour
+public class WandSpider : DifficultySensitiveBehaviour
 {
     //rigidbody of the mouse
     Rigidbody rb;
@@ -293,4 +294,15 @@ public class WandSpider : MonoBehaviour
 
     }
 
+    public override void SetLevel(Difficulity level) {
+        if (level != Difficulity.Adjustment) {
+            enabled = true;
+            rb.isKinematic = false;
+        } else {
+            enabled = false;
+            rb.isKinematic = true;
+            return;
+        }
+        notLevel3 = level != Difficulity.Advanced;
+    }
 }

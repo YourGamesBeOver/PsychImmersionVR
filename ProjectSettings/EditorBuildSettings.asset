@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/testRoom.unity
+    path: Assets/Scenes/AnimalSelectionMenu.unity
   - enabled: 1
-    path: Assets/MonitorUI.unity
+    path: Assets/Scenes/AnimalSelectionMenu_VR.unity
+  - enabled: 1
+    path: Assets/Scenes/Experiment.unity
+  - enabled: 1
+    path: Assets/Scenes/ExperimentLoader.unity
+  - enabled: 1
+    path: Assets/Scenes/IPDCalibration.unity
+  - enabled: 1
+    path: Assets/Scenes/MonitorUI.unity
+  - enabled: 1
+    path: Assets/Scenes/PostExperiment.unity
+  - enabled: 1
+    path: Assets/Scenes/PostExperiment_VR.unity

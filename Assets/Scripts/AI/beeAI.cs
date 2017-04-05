@@ -2,7 +2,7 @@
 using System.Collections;
 using PsychImmersion;
 
-public class beeAI : MonoBehaviour {
+public class beeAI : DifficultySensitiveBehaviour {
     
     //The difficulty level we are on
     public Difficulity diff;
@@ -110,6 +110,9 @@ public class beeAI : MonoBehaviour {
     {
         switch (diff)
         {
+            case Difficulity.Adjustment:
+                //do nothing; the simulation has not started
+                break;
             case Difficulity.Beginner:
                 //if the collider entered is the waypoint we want, go to the next one
                 //if the collider entered is any other way point, do nothing
@@ -266,13 +269,27 @@ public class beeAI : MonoBehaviour {
         rb.MoveRotation(Quaternion.Slerp(transform.rotation, rotation, Time.fixedDeltaTime));
     }
 
-    public void SetLevel(Difficulity level)
+    public override void SetLevel(Difficulity level)
     {
+        if (level != Difficulity.Adjustment)
+        {
+            enabled = true;
+            rb.isKinematic = false;
+        }
+        else
+        {
+            enabled = false;
+            rb.isKinematic = true;
+            return;
+        }
         cWaypoint = 0;
         firstCollision = true;
         diff = level;
         switch (diff)
         {
+            case Difficulity.Adjustment:
+                //do nothing
+                break;
             case Difficulity.Beginner:
                 currentWaypoints = waypointsBeginner;
                 currentWaypoints[0].tag = "beginner current";

@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 50048724}
   - component: {fileID: 50048726}
   - component: {fileID: 50048725}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Table Distance Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 76851034}
   - component: {fileID: 76851036}
   - component: {fileID: 76851035}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 87547542}
   - component: {fileID: 87547544}
   - component: {fileID: 87547543}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: View Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 92114304}
   - component: {fileID: 92114306}
   - component: {fileID: 92114305}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 160381449}
   - component: {fileID: 160381448}
   - component: {fileID: 160381450}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Settings Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 304699691}
   - component: {fileID: 304699693}
   - component: {fileID: 304699692}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 343885901}
   - component: {fileID: 343885903}
   - component: {fileID: 343885902}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Scaling Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 470329233}
   - component: {fileID: 470329232}
   - component: {fileID: 470329237}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: MonitorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 634174143}
   - component: {fileID: 634174145}
   - component: {fileID: 634174144}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 798274727}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 842084898}
   - component: {fileID: 842084900}
   - component: {fileID: 842084899}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: OverheadPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 988381951}
   - component: {fileID: 988381953}
   - component: {fileID: 988381952}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 1153290181}
   - component: {fileID: 1153290183}
   - component: {fileID: 1153290182}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,6 +1095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateInterval: 0.5
+  MinGoodFps: 89.75
+  MinAcceptableFps: 44.75
 --- !u!4 &1224689920
 Transform:
   m_ObjectHideFlags: 0
@@ -1116,7 +1118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1331028671}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1154,7 @@ GameObject:
   - component: {fileID: 1386346825}
   - component: {fileID: 1386346827}
   - component: {fileID: 1386346826}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1226,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1503790470}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1258,7 +1260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1614153609}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1296,7 @@ GameObject:
   - component: {fileID: 1709035389}
   - component: {fileID: 1709035390}
   - component: {fileID: 1709035391}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1394,7 @@ GameObject:
   - component: {fileID: 1718501633}
   - component: {fileID: 1718501635}
   - component: {fileID: 1718501634}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1498,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1513,7 +1515,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1729706188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 611.01416, y: 371.15494, z: 152.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1529,7 +1531,7 @@ GameObject:
   - component: {fileID: 1768324205}
   - component: {fileID: 1768324207}
   - component: {fileID: 1768324206}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,7 +1661,7 @@ GameObject:
   - component: {fileID: 1940796940}
   - component: {fileID: 1940796942}
   - component: {fileID: 1940796941}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1758,7 +1760,7 @@ GameObject:
   - component: {fileID: 1957754106}
   - component: {fileID: 1957754108}
   - component: {fileID: 1957754107}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1832,7 +1834,7 @@ GameObject:
   - component: {fileID: 1989826687}
   - component: {fileID: 1989826689}
   - component: {fileID: 1989826688}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,7 +1908,7 @@ GameObject:
   - component: {fileID: 2050215590}
   - component: {fileID: 2050215592}
   - component: {fileID: 2050215591}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1980,7 +1982,7 @@ GameObject:
   - component: {fileID: 2109674491}
   - component: {fileID: 2109674493}
   - component: {fileID: 2109674492}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ViewportPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
