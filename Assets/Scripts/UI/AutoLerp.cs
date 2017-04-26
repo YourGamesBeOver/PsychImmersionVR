@@ -23,7 +23,9 @@ namespace PsychImmersion.UI
             }
         }
 
-        void LateUpdate () {
+        void LateUpdate ()
+        {
+            if (Target == null) return;
             transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref _curVelocity, SmoothTime, MaxSpeed, Time.deltaTime);
             transform.rotation = Quaternion.Slerp(transform.rotation, Target.rotation, SlerpTime*Time.deltaTime);
         }

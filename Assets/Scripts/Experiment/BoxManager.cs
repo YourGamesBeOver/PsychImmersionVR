@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace PsychImmersion
+namespace PsychImmersion.Experiment
 {
     [RequireComponent(typeof(Animation))]
     public class BoxManager : DifficultySensitiveBehaviour
@@ -80,9 +80,23 @@ namespace PsychImmersion
         public void TransitionToState(BoxState state)
         {
             _curState = state;
-            if (state == BoxState.Normal)
+
+            switch (state)
             {
-                _animation.Play("TableRise");
+                case BoxState.Hidden:
+                    break;
+                case BoxState.Normal:
+                    InstantiateAnimal(ExperimentManager.Instance.SelectedAnimal);
+                    _animation.Play("TableRise");
+                    break;
+                case BoxState.Opened:
+                    _animation.Play("BoxOpen");
+                    break;
+                case BoxState.OnFloor:
+                    _animation.Play("TableSink");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("state", state, null);
             }
         }
 

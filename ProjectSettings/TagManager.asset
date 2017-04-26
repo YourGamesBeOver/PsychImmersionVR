@@ -21,8 +21,8 @@ TagManager:
   - 
   - 
   - MonitorOnly
-  - 
-  - 
+  - HideFromOverhead
+  - LoadingScreen
   - 
   - 
   - 

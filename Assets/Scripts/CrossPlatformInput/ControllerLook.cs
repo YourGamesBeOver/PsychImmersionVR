@@ -21,6 +21,7 @@ namespace PsychImmersion.CrossPlatformInput
 
         public void Update()
         {
+            if (CrossPlatformInputManager.Instance == null) return;
             var y = CrossPlatformInputManager.Instance.LookX * Time.deltaTime * Sensitivity;
             var x = CrossPlatformInputManager.Instance.LookY * Time.deltaTime * Sensitivity;
             var curYrot = transform.eulerAngles.y;

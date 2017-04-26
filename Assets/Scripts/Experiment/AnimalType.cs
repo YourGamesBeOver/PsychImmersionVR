@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PsychImmersion
+namespace PsychImmersion.Experiment
 {
     [Flags]
     public enum AnimalType {

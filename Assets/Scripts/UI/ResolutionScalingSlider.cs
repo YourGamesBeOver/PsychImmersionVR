@@ -21,6 +21,12 @@ namespace PsychImmersion.UI
 
         private void Start()
         {
+            if (!VRSettings.isDeviceActive)
+            {
+                _slider.interactable = false;
+                ValueText.text = "NoVR";
+                return;
+            }
             _curValue = (float)Math.Round(VRSettings.renderScale, 1);
             _slider.value = _curValue;
             if (ValueText != null) ValueText.text = "" + _curValue;

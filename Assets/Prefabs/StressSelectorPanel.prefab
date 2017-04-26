@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0.5
-  DisableWhenInvisible: 0
+  DisableWhenInvisible: 1
   InitiallyVisible: 0
 --- !u!114 &114107039168095326
 MonoBehaviour:

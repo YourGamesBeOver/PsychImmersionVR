@@ -1,4 +1,5 @@
 ﻿using PsychImmersion.CrossPlatformInput;
+using PsychImmersion.Experiment;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ namespace PsychImmersion.UI
 {
     public class StressSelectorPanel : MonoBehaviour
     {
+        private const int MaxStressLevel = 10;
+
         public Text NumberText;
         public GameObject UpArrow;
         public GameObject DownArrow;
@@ -19,7 +22,7 @@ namespace PsychImmersion.UI
         public void SetStressLevel(int newLevel)
         {
             _curLevel = newLevel;
-            UpArrow.SetActive(newLevel < 10);
+            UpArrow.SetActive(newLevel < MaxStressLevel);
             DownArrow.SetActive(newLevel > 0);
             NumberText.text = newLevel.ToString();
         }
@@ -27,7 +30,7 @@ namespace PsychImmersion.UI
         public void Increment()
         {
             if (_submitted) return;
-            if (_curLevel < 10) SetStressLevel(_curLevel+1);
+            if (_curLevel < MaxStressLevel) SetStressLevel(_curLevel+1);
         }
 
         public void Decrement()
@@ -40,10 +43,13 @@ namespace PsychImmersion.UI
         {
             if (_submitted) return; //don't allow multiple submissions
             //submit _curLevel to data storage object
+            DataRecorder.RecordEvent(DataEvent.AnxietyLevel, _curLevel);
             _submitted = true;
             CancelInvoke("Submit");
             Fader.FadeOut();
         }
+
+        public int CurrentStressLevel { get { return _curLevel; } }
 
         public void Prompt(float timeout)
         {
@@ -65,16 +71,13 @@ namespace PsychImmersion.UI
 
         private void OnDestroy()
         {
-            if (CrossPlatformInputManager.Instance != null)
-            {
-                CrossPlatformInputManager.Instance.UpButtonPressed -= Increment;
-                CrossPlatformInputManager.Instance.DownButtonPressed -= Decrement;
-                CrossPlatformInputManager.Instance.NextButtonPressed -= Submit;
-            }
-            
+            if (CrossPlatformInputManager.Instance == null) return;
+            CrossPlatformInputManager.Instance.UpButtonPressed -= Increment;
+            CrossPlatformInputManager.Instance.DownButtonPressed -= Decrement;
+            CrossPlatformInputManager.Instance.NextButtonPressed -= Submit;
         }
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
         // Update is called once per frame
         void Update () {
@@ -97,6 +100,6 @@ namespace PsychImmersion.UI
             }
 
         }
-#endif
+//#endif
     }
 }

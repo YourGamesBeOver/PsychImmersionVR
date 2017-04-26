@@ -17,6 +17,11 @@ namespace PsychImmersion.DebugScripts
 	
         // Update is called once per frame
         void Update () {
+            if(CrossPlatformInputManager.Instance == null)
+            {
+                _text.text = "<color=red>CrossPlatformInputManager is null</color>";
+                return;
+            }
             var sb = new StringBuilder();
 
             sb.AppendLine("<color=green>Joysticks:</color>");

@@ -68,17 +68,26 @@ namespace PsychImmersion.CrossPlatformInput
         private const float StickDeadZone = 0.1f;
 
         private static CrossPlatformInputManager _instance;
+        private static bool _shuttingDown = false;
 
         public static CrossPlatformInputManager Instance
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null && !_shuttingDown)
                 {
                     // ReSharper disable once ObjectCreationAsStatement
                     new GameObject("CrossPlatformInputManager", typeof(CrossPlatformInputManager));
                 }
                 return _instance;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_instance == this) {
+                _shuttingDown = true;
+                _instance = null;
             }
         }
 

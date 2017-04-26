@@ -1,27 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PsychImmersion.Experiment;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExitPanel : MonoBehaviour
+namespace PsychImmersion.UI
 {
-
-    public Text FilePathText;
-
-    void Start()
+    public class ExitPanel : MonoBehaviour
     {
-        FilePathText.text = "File path will go here";
-    }
 
-    public void QuitApplication()
-    {
-#if UNITY_EDITOR
-        if (UnityEditor.EditorApplication.isPlaying)
+        public Text FilePathText;
+
+        void Start()
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            try
+            {
+                FilePathText.text = DataRecorder.WriteFile();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogException(e,this);
+                FilePathText.text = "An error occured while saving the file.";
+            }
         }
+
+        public void QuitApplication()
+        {
+#if UNITY_EDITOR
+            if (UnityEditor.EditorApplication.isPlaying)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
 #else
         Application.Quit();
 #endif
+        }
     }
 }

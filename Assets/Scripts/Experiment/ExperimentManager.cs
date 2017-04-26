@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR;
 
-namespace PsychImmersion
+namespace PsychImmersion.Experiment
 {
     /// <summary>
-    /// this singleton is responsible for managing the entire simulation
+    /// this singleton is responsible for managing the state of the entire program.  It move between scenes, etc
     /// </summary>
     public class ExperimentManager : MonoBehaviour
     {
@@ -20,6 +19,7 @@ namespace PsychImmersion
             {
                 if (_instance == null && !_shuttingDown)
                 {
+                    Debug.Log("Spawning new ExperimentManager");
                     new GameObject("ExperimentManager").AddComponent<ExperimentManager>();
                 }
                 return _instance;
@@ -31,6 +31,8 @@ namespace PsychImmersion
         public AnimalType SelectedAnimal { get; private set; }
 
         private static bool _shuttingDown = false;
+
+        public static bool DualDisplayMode = true;
 
         void Awake()
         {
@@ -108,6 +110,7 @@ namespace PsychImmersion
                     break;
                 case SimulationState.AnimalSelection:
                     SceneManager.LoadScene("AnimalSelectionMenu");
+                    if(VRSettings.isDeviceActive) SceneManager.LoadScene("AnimalSelectionMenu_VR", LoadSceneMode.Additive);
                     break;
                 case SimulationState.IpdCalibration:
                     SceneManager.LoadScene("IPDCalibration");
@@ -121,6 +124,7 @@ namespace PsychImmersion
                     break;
                 case SimulationState.PostExperiment:
                     SceneManager.LoadScene("PostExperiment");
+                    if(VRSettings.isDeviceActive) SceneManager.LoadScene("PostExperiment_VR", LoadSceneMode.Additive);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("newState", newState, null);
@@ -136,6 +140,11 @@ namespace PsychImmersion
         public void IpdCalibrationComplete()
         {
             GoToNextSimulationState(SimulationState.IpdCalibration);
+        }
+
+        public void ExperimentComplete()
+        {
+            GoToNextSimulationState(SimulationState.Experiment);
         }
 
         private enum SimulationState

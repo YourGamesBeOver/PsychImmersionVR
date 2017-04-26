@@ -17,6 +17,7 @@ namespace PsychImmersion.DebugScripts
 
         private void OnDestroy()
         {
+            if (CrossPlatformInputManager.Instance == null) return;
             CrossPlatformInputManager.Instance.NextButtonPressed -= NextButtonPressed;
             CrossPlatformInputManager.Instance.BackButtonPressed -= BackButtonPressed;
             CrossPlatformInputManager.Instance.DownButtonPressed -= DownButtonPressed;
