@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.VR;
@@ -145,6 +147,26 @@ namespace PsychImmersion.Experiment
         public void ExperimentComplete()
         {
             GoToNextSimulationState(SimulationState.Experiment);
+        }
+
+        public string GetAnimalString() {
+            var animals = GetAnimalNames(SelectedAnimal).ToArray();
+            if (animals.Length == 0) return "None";
+            if (animals.Length == 1) return animals[0];
+            if (animals.Length == 2) return animals[0] + " and " + animals[1];
+            return string.Join(", ", animals, 0, animals.Length - 1) + ", and " + animals[animals.Length - 1];
+        }
+
+        private static IEnumerable<string> GetAnimalNames(AnimalType animals) {
+            if ((animals & AnimalType.Bee) == AnimalType.Bee) {
+                yield return "Bee";
+            }
+            if ((animals & AnimalType.Mouse) == AnimalType.Mouse) {
+                yield return "Mouse";
+            }
+            if ((animals & AnimalType.Spider) == AnimalType.Spider) {
+                yield return "Spider";
+            }
         }
 
         private enum SimulationState

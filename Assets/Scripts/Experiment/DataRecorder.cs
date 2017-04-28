@@ -75,7 +75,7 @@ namespace PsychImmersion.Experiment
             _builder.AppendFormat("Date:,{0}\n", DateTime.Now.ToString(CultureInfo.CurrentCulture));
             _builder.AppendFormat("Platform:,{0}\n", GetPlatformName());
             _builder.AppendFormat("Trial:,{0}\n", GetTrialNumber());
-            //TODO record animal selection
+            _builder.AppendFormat("Animals:,{0}", ExperimentManager.Instance.GetAnimalString());
             _builder.AppendLine();
             _builder.AppendLine("Timestamp,Event Type,Value");
         }
