@@ -1,4 +1,4 @@
-﻿namespace PsychImmersion
+﻿namespace PsychImmersion.Experiment
 {
     public enum Difficulity
     {

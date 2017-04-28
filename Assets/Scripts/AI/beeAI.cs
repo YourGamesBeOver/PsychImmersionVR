@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using PsychImmersion;
+using PsychImmersion.Experiment;
 
 public class beeAI : DifficultySensitiveBehaviour {
     

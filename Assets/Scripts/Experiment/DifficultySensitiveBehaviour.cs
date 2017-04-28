@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PsychImmersion.Experiment;
 using UnityEngine;
 
 namespace PsychImmersion
