@@ -92,6 +92,11 @@ namespace PsychImmersion.Experiment
             SetExperimentStage(SimulationState.PostExperiment);
         }
 
+        public void AbortExperiment() {
+            DataRecorder.RecordEvent(DataEvent.ExperimentAborted);
+            SetExperimentStage(SimulationState.PostExperiment);
+        }
+
         public string GetAnimalString() {
             var animals = GetAnimalNames(SelectedAnimal).ToArray();
             if (animals.Length == 0) return "None";
