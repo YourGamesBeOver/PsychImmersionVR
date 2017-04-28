@@ -28,8 +28,6 @@ namespace PsychImmersion.Experiment
             } 
         }
 
-        private SimulationState _curState = SimulationState.Init;
-
         public AnimalType SelectedAnimal { get; private set; }
 
         private static bool _shuttingDown = false;
@@ -56,54 +54,14 @@ namespace PsychImmersion.Experiment
                 _instance = null;
             }
         }
-	
-        // Update is called once per frame
-        void Update () {
-            switch (_curState)
-            {
-                case SimulationState.Init:
-                    _curState = SimulationState.AnimalSelection;
-                    return;
-                case SimulationState.AnimalSelection:
-                    return;
-                case SimulationState.Experiment:
-                    break;
-                case SimulationState.PostExperiment:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        private void GoToNextSimulationState(SimulationState from)
-        {
-            switch (from)
-            {
-                case SimulationState.Init:
-                    SetExperimentStage(SimulationState.AnimalSelection);
-                    break;
-                case SimulationState.AnimalSelection:
-                    SetExperimentStage(SimulationState.Experiment);
-                    break;
-                case SimulationState.Experiment:
-                    SetExperimentStage(SimulationState.PostExperiment);
-                    break;
-                case SimulationState.PostExperiment:
-                    Debug.LogWarning("Attempted to move past PostExperiment SimulationState");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
 
         private void SetExperimentStage(SimulationState newState)
         {
-            _curState = newState;
             switch (newState)
             {
                 case SimulationState.Init:
                     break;
-                case SimulationState.AnimalSelection:
+                case SimulationState.Setup:
                     SceneManager.LoadScene("AnimalSelectionMenu");
                     if(VRSettings.isDeviceActive) SceneManager.LoadScene("AnimalSelectionMenu_VR", LoadSceneMode.Additive);
                     break;
@@ -126,12 +84,12 @@ namespace PsychImmersion.Experiment
         public void SetAnimal(AnimalType type)
         {
             SelectedAnimal = type;
-            GoToNextSimulationState(SimulationState.AnimalSelection);
+            SetExperimentStage(SimulationState.Experiment);
         }
 
         public void ExperimentComplete()
         {
-            GoToNextSimulationState(SimulationState.Experiment);
+            SetExperimentStage(SimulationState.PostExperiment);
         }
 
         public string GetAnimalString() {
@@ -143,13 +101,13 @@ namespace PsychImmersion.Experiment
         }
 
         private static IEnumerable<string> GetAnimalNames(AnimalType animals) {
-            if ((animals & AnimalType.Bee) == AnimalType.Bee) {
+            if (animals.HasFlag(AnimalType.Bee)) {
                 yield return "Bee";
             }
-            if ((animals & AnimalType.Mouse) == AnimalType.Mouse) {
+            if (animals.HasFlag(AnimalType.Mouse)) {
                 yield return "Mouse";
             }
-            if ((animals & AnimalType.Spider) == AnimalType.Spider) {
+            if (animals.HasFlag(AnimalType.Spider)) {
                 yield return "Spider";
             }
         }
@@ -157,7 +115,7 @@ namespace PsychImmersion.Experiment
         private enum SimulationState
         {
             Init,
-            AnimalSelection,
+            Setup,
             Experiment,
             PostExperiment
         }

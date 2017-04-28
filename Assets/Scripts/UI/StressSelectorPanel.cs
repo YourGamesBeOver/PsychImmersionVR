@@ -86,7 +86,7 @@ namespace PsychImmersion.UI
             CrossPlatformInputManager.Instance.ConfirmButtonPressed -= Submit;
         }
 
-//#if UNITY_EDITOR
+#if DEBUG
 
         // Update is called once per frame
         void Update () {
@@ -109,6 +109,6 @@ namespace PsychImmersion.UI
             }
 
         }
-//#endif
+#endif
     }
 }

@@ -25,10 +25,5 @@ namespace PsychImmersion.VR
             }
             this.enabled = false;
         }
-	
-        // Update is called once per frame
-        void Update () {
-		
-        }
     }
 }
