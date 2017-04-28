@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace PsychImmersion.UI
@@ -14,6 +15,10 @@ namespace PsychImmersion.UI
         private CanvasGroup _group;
         private float _targetAlpha = 1;
 
+        private event Action OnFadeIn;
+        private event Action OnFadeOut;
+
+
         void Awake()
         {
             _group = GetComponent<CanvasGroup>();
@@ -22,23 +27,39 @@ namespace PsychImmersion.UI
 
         private void OnEnable()
         {
-            _group.alpha = InitiallyVisible ? 1f : 0f;
+            _group.alpha = InitiallyVisible ? _targetAlpha : 0f;
             if(FadeInOnEnable) StartCoroutine(FadeInCorutine());
             if(!InitiallyVisible && DisableWhenInvisible) gameObject.SetActive(true);
         }
 
-        public void FadeOut()
+        public void FadeOut(Action callback)
         {
-            if (!gameObject.activeInHierarchy) return;
+            if (!gameObject.activeInHierarchy)
+            {
+                if (callback != null) callback();
+                return;
+            }
+            if(callback != null) OnFadeOut += callback;
             StopAllCoroutines();
             StartCoroutine(FadeOutCorutine());
         }
 
-        public void FadeIn()
+        public void FadeOut()
+        {
+            FadeOut(null);
+        }
+
+        public void FadeIn(Action callback)
         {
             if (!gameObject.activeInHierarchy && DisableWhenInvisible) gameObject.SetActive(true);
+            if (callback != null) OnFadeIn += callback;
             StopAllCoroutines();
             StartCoroutine(FadeInCorutine());
+        }
+
+        public void FadeIn()
+        {
+            FadeIn(null);
         }
 
         private IEnumerator FadeInCorutine()
@@ -51,6 +72,11 @@ namespace PsychImmersion.UI
                 time += Time.deltaTime;
             }
             _group.alpha = _targetAlpha;
+            if (OnFadeIn != null)
+            {
+                OnFadeIn();
+                OnFadeIn = null;
+            }
         }
 
         private IEnumerator FadeOutCorutine() {
@@ -62,6 +88,10 @@ namespace PsychImmersion.UI
             }
             _group.alpha = 0f;
             if(DisableWhenInvisible)gameObject.SetActive(false);
+            if (OnFadeOut != null) {
+                OnFadeOut();
+                OnFadeOut = null;
+            }
         }
     }
 }

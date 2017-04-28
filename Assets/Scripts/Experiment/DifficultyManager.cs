@@ -39,17 +39,6 @@ namespace PsychImmersion.Experiment
         void Start () {
 		    DataRecorder.ResetTime();
             NextLevelPanel.OnConfirm += NextDifficultyLevel;
-            //TODO later this will be called from the tutorial system
-            PromptForBaseline();
-        }
-
-        private void PromptForBaseline()
-        {
-            StressPanel.Prompt(float.PositiveInfinity, value =>
-            {
-                DataRecorder.RecordEvent(DataEvent.BaselineAnxietyLevel, value);
-                return false;
-            });
         }
 
         public void PromptForNextDifficultyLevel()

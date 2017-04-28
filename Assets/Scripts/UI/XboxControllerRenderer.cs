@@ -25,7 +25,7 @@ namespace PsychImmersion.UI
             GuideObject;
 
         public float BlinkTime = 1f;
-        private XboxButton _buttonsToBlink;
+        private XboxButton _buttonsToBlink = XboxButton.None;
 
         public bool AVisible
         {
@@ -106,7 +106,6 @@ namespace PsychImmersion.UI
             if (button.HasFlag(XboxButton.LS)) LSVisible = visible;
             if (button.HasFlag(XboxButton.RS)) RSVisible = visible;
             if (button.HasFlag(XboxButton.Guide)) GuideVisible = visible;
-            RemoveBlink(button);
         }
 
         /// <summary>
@@ -135,11 +134,7 @@ namespace PsychImmersion.UI
         {
             var old = _buttonsToBlink;
             _buttonsToBlink = buttons;
-            if (old == XboxButton.None && buttons != XboxButton.None)
-            {
-                StopAllCoroutines();
-                StartCoroutine(BlinkCoroutine());
-            }
+            SetVisibility(old & ~_buttonsToBlink, false); //turn off buttons that are no longer blinking
         }
 
         /// <summary>
@@ -164,12 +159,23 @@ namespace PsychImmersion.UI
         private IEnumerator BlinkCoroutine()
         {
             var visible = true;
-            while (_buttonsToBlink != XboxButton.None)
+            while (true)
             {
                 SetVisibility(_buttonsToBlink, visible);
                 visible = !visible;
                 yield return new WaitForSeconds(BlinkTime);
             }
+            // ReSharper disable once IteratorNeverReturns
+        }
+
+        void OnEnable()
+        {
+            StartCoroutine(BlinkCoroutine());
+        }
+
+        void OnDisable()
+        {
+            StopAllCoroutines();
         }
 
         [Flags]
@@ -190,6 +196,11 @@ namespace PsychImmersion.UI
             LS    = 2048,
             RS    = 4096,
             Guide = 8192,
+            FaceButtons = A | B | X | Y,
+            Triggers = LT | RT,
+            Sticks = LS | RS,
+            Bumpers = LB | RB,
+            All = FaceButtons | Triggers | Sticks | Bumpers | Menu | View | Dpad | Guide
         }
     }
 

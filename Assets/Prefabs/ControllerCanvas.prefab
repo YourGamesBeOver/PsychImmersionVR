@@ -468,8 +468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Duration: 0.5
   DisableWhenInvisible: 1
-  InitiallyVisible: 1
-  FadeInOnEnable: 1
+  InitiallyVisible: 0
+  FadeInOnEnable: 0
 --- !u!114 &114077190263442876
 MonoBehaviour:
   m_ObjectHideFlags: 1

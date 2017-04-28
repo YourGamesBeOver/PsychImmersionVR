@@ -14,6 +14,9 @@ namespace PsychImmersion.UI
         public GameObject DownArrow;
         public CanvasSmoothFadeInOut Fader;
 
+        [System.NonSerialized]
+        public bool SubmissionEnabled = true;
+
         public delegate bool SubmitCallback(int value);
 
         private SubmitCallback _submitCallback = null;
@@ -46,7 +49,7 @@ namespace PsychImmersion.UI
 
         public void Submit()
         {
-            if (_submitted) return; //don't allow multiple submissions
+            if (_submitted || !SubmissionEnabled) return; //don't allow multiple submissions
             //submit _curLevel to data storage object
             if (_submitCallback == null || _submitCallback.Invoke(_curLevel))
             {
