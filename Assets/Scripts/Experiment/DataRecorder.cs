@@ -98,7 +98,14 @@ namespace PsychImmersion.Experiment
         public static void RecordEvent(DataEvent eventType, int value = 0)
         {
             if(!_initalized) throw new Exception("DataRecorder not initalized!");
-            _builder.AppendFormat("{0:F2},{1},{2}\n", GetCurrentTimeStamp(), GetNameForEvent(eventType), value);
+            if (eventType == DataEvent.AnxietyLevel)
+            {
+                _builder.AppendFormat("{0:F2},{1},{2:F1}\n", GetCurrentTimeStamp(), GetNameForEvent(eventType), value/2f);
+            }
+            else
+            {
+                _builder.AppendFormat("{0:F2},{1},{2}\n", GetCurrentTimeStamp(), GetNameForEvent(eventType), value);
+            }
         }
 
         /// <summary>

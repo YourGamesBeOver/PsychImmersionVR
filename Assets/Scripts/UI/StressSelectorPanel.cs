@@ -7,7 +7,7 @@ namespace PsychImmersion.UI
 {
     public class StressSelectorPanel : MonoBehaviour
     {
-        private const int MaxStressLevel = 10;
+        private const int MaxStressLevel = 20;
 
         public Text NumberText;
         public GameObject UpArrow;
@@ -24,7 +24,8 @@ namespace PsychImmersion.UI
             _curLevel = newLevel;
             UpArrow.SetActive(newLevel < MaxStressLevel);
             DownArrow.SetActive(newLevel > 0);
-            NumberText.text = newLevel.ToString();
+            var half = newLevel/2f;
+            NumberText.text = half.ToString("F1");
         }
 
         public void Increment()
