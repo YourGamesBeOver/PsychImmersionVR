@@ -22,6 +22,14 @@ namespace PsychImmersion.Experiment
         /// </summary>
         private const float StressPromptTimeout = 30f;
 
+        /// <summary>
+        /// how long we should wait before prompting to go to the next level anyway
+        /// TODO make this more dynamic?
+        /// </summary>
+        private const float AutoLevelTime = 600f;
+
+        private int _lastStressLevel = 0;
+
         public static DifficultyManager Instance { get; private set; }
 
         public Difficulity CurrentDifficulty { get; private set; }
@@ -43,6 +51,7 @@ namespace PsychImmersion.Experiment
 
         public void PromptForNextDifficultyLevel()
         {
+            CancelInvoke("PromptForNextDifficultyLevel");
             NextLevelPanel.Prompt();
         }
 
@@ -64,6 +73,7 @@ namespace PsychImmersion.Experiment
             DataRecorder.RecordEvent(DataEvent.DifficultyLevelChanged, (int)CurrentDifficulty);
             //tell anybody who cares that the difficulty level changed
             DifficultySensitiveBehaviour.SetLevelForAll(CurrentDifficulty);
+            Invoke("PromptForNextDifficultyLevel", AutoLevelTime);
                 
         }
 
@@ -72,7 +82,15 @@ namespace PsychImmersion.Experiment
             yield return new WaitForSeconds(InitialStressPromptDelay);
             while (true)
             {
-                StressPanel.Prompt(StressPromptTimeout);
+                StressPanel.Prompt(StressPromptTimeout, value =>
+                {
+                    if (value < _lastStressLevel && value <= 4)
+                    {
+                        PromptForNextDifficultyLevel();
+                    }
+                    _lastStressLevel = value;
+                    return true;
+                });
                 yield return new WaitForSeconds(StressPromptFrequency);
             }
             // ReSharper disable once IteratorNeverReturns

@@ -174,6 +174,20 @@ namespace PsychImmersion.UI
             });
         }
 
+#if DEBUG
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                StopAllCoroutines();
+                GoToStage(Stage.MovingOn);
+            }
+        }
+
+#endif
+
+
+
         private enum Stage
         {
             Welcome,
