@@ -13,6 +13,8 @@ namespace PsychImmersion.Experiment
 
         private static bool _initalized = false;
 
+        private static int _trialNumber;
+
         static DataRecorder()
         {
             Initalize();
@@ -29,11 +31,11 @@ namespace PsychImmersion.Experiment
             //sets up int to keep track of number of trials
             if (!PlayerPrefs.HasKey("TrialNumber"))
             {
-                PlayerPrefs.SetInt("TrialNumber", 1);
+                _trialNumber = 1;
             }
             else
             {
-                PlayerPrefs.SetInt("TrialNumber", PlayerPrefs.GetInt("TrialNumber") + 1);
+                _trialNumber = PlayerPrefs.GetInt("TrialNumber") + 1;
             }
    
             _startPoint = DateTime.Now;
@@ -82,12 +84,13 @@ namespace PsychImmersion.Experiment
 
         public static int GetTrialNumber()
         {
-            return PlayerPrefs.GetInt("TrialNumber");
+            return _trialNumber;
         }
 
         public static void ResetTrialNumber()
         {
             PlayerPrefs.SetInt("TrialNumber", 0);
+            _trialNumber = 1;
         }
 
         /// <summary>
@@ -140,6 +143,7 @@ namespace PsychImmersion.Experiment
             var filename = GetFileName();
             File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/" + filename,
                 _builder.ToString());
+            PlayerPrefs.SetInt("TrialNumber", _trialNumber);
             return filename;
         }
 
