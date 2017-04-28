@@ -1191,6 +1191,12 @@ Transform:
   m_Father: {fileID: 1799068681}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1028567949 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114707515591695528, guid: 8a4fdb36a571313418dddd4df08af6fd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1946319133}
+  m_Script: {fileID: 11500000, guid: 3c2f0a14482695544bc8ab4c353139e1, type: 3}
 --- !u!1 &1043000160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StressPanel: {fileID: 374768115}
-  SkipAdjustmentStage: 1
+  NextLevelPanel: {fileID: 1028567949}
 --- !u!4 &1395304327
 Transform:
   m_ObjectHideFlags: 0
