@@ -14,6 +14,10 @@ namespace PsychImmersion.UI
         public GameObject DownArrow;
         public CanvasSmoothFadeInOut Fader;
 
+        public delegate bool SubmitCallback(int value);
+
+        private SubmitCallback _submitCallback = null;
+
         private int _curLevel = 5;
         //this value is false when accepting user input
         private bool _submitted = true;
@@ -44,7 +48,10 @@ namespace PsychImmersion.UI
         {
             if (_submitted) return; //don't allow multiple submissions
             //submit _curLevel to data storage object
-            DataRecorder.RecordEvent(DataEvent.AnxietyLevel, _curLevel);
+            if (_submitCallback == null || _submitCallback.Invoke(_curLevel))
+            {
+                DataRecorder.RecordEvent(DataEvent.AnxietyLevel, _curLevel);
+            }
             _submitted = true;
             CancelInvoke("Submit");
             Fader.FadeOut();
@@ -52,10 +59,11 @@ namespace PsychImmersion.UI
 
         public int CurrentStressLevel { get { return _curLevel; } }
 
-        public void Prompt(float timeout)
+        public void Prompt(float timeout, SubmitCallback callback = null)
         {
+            _submitCallback = callback;
             Fader.FadeIn();
-            Invoke("Submit", timeout);
+            if(!float.IsPositiveInfinity(timeout)) Invoke("Submit", timeout);
             _submitted = false;
         }
 

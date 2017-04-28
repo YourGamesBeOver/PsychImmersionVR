@@ -1,6 +1,6 @@
 ﻿using System;
+using JetBrains.Annotations;
 using PsychImmersion.Experiment;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace PsychImmersion.UI
@@ -25,9 +25,10 @@ namespace PsychImmersion.UI
             DifficultyText.text = string.Format(DifficultyStringFormat, Enum.GetName(typeof(Difficulity), level));
         }
 
+        [UsedImplicitly]
         public void GoToNextLevel()
         {
-            DifficultyManager.Instance.NextDifficultyLevel();
+            DifficultyManager.Instance.PromptForNextDifficultyLevel();
         }
     }
 }

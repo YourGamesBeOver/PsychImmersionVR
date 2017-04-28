@@ -10,10 +10,9 @@ namespace PsychImmersion.Experiment
     public class DifficultyManager : MonoBehaviour
     {
         /// <summary>
-        /// how much we delay before the first stress prompt (to give the animal time to appear?)
-        /// TODO what about the baseline reading?
+        /// how much we delay before the first stress prompt
         /// </summary>
-        private const float InitialStressPromptDelay = 5f;
+        private const float InitialStressPromptDelay = 60f;
         /// <summary>
         /// How often the Stress Prompt should come up
         /// </summary>
@@ -28,8 +27,7 @@ namespace PsychImmersion.Experiment
         public Difficulity CurrentDifficulty { get; private set; }
 
         public StressSelectorPanel StressPanel;
-
-        public bool SkipAdjustmentStage = true;
+        public NextLevelPanel NextLevelPanel;
 
         void Awake()
         {
@@ -40,14 +38,26 @@ namespace PsychImmersion.Experiment
         // Use this for initialization
         void Start () {
 		    DataRecorder.ResetTime();
-            if (SkipAdjustmentStage)
-            {
-                NextDifficultyLevel();
-            }
+            NextLevelPanel.OnConfirm += NextDifficultyLevel;
+            //TODO later this will be called from the tutorial system
+            PromptForBaseline();
         }
 
+        private void PromptForBaseline()
+        {
+            StressPanel.Prompt(float.PositiveInfinity, value =>
+            {
+                DataRecorder.RecordEvent(DataEvent.BaselineAnxietyLevel, value);
+                return false;
+            });
+        }
 
-        public void NextDifficultyLevel()
+        public void PromptForNextDifficultyLevel()
+        {
+            NextLevelPanel.Prompt();
+        }
+
+        private void NextDifficultyLevel()
         {
             if (CurrentDifficulty == Difficulity.Advanced)
             {
@@ -78,7 +88,6 @@ namespace PsychImmersion.Experiment
             }
             // ReSharper disable once IteratorNeverReturns
         }
-
 
     }
 }

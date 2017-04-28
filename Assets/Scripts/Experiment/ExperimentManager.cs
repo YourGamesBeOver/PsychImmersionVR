@@ -34,7 +34,7 @@ namespace PsychImmersion.Experiment
 
         private static bool _shuttingDown = false;
 
-        public static bool DualDisplayMode = true;
+        public static bool DualDisplayMode = false;
 
         void Awake()
         {
