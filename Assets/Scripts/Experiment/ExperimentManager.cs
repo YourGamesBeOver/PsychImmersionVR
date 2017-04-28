@@ -66,8 +66,6 @@ namespace PsychImmersion.Experiment
                     return;
                 case SimulationState.AnimalSelection:
                     return;
-                case SimulationState.IpdCalibration:
-                    return;
                 case SimulationState.Experiment:
                     break;
                 case SimulationState.PostExperiment:
@@ -85,11 +83,6 @@ namespace PsychImmersion.Experiment
                     SetExperimentStage(SimulationState.AnimalSelection);
                     break;
                 case SimulationState.AnimalSelection:
-                    SetExperimentStage(VRSettings.isDeviceActive
-                        ? SimulationState.IpdCalibration
-                        : SimulationState.Experiment);
-                    break;
-                case SimulationState.IpdCalibration:
                     SetExperimentStage(SimulationState.Experiment);
                     break;
                 case SimulationState.Experiment:
@@ -114,9 +107,6 @@ namespace PsychImmersion.Experiment
                     SceneManager.LoadScene("AnimalSelectionMenu");
                     if(VRSettings.isDeviceActive) SceneManager.LoadScene("AnimalSelectionMenu_VR", LoadSceneMode.Additive);
                     break;
-                case SimulationState.IpdCalibration:
-                    SceneManager.LoadScene("IPDCalibration");
-                    break;
                 case SimulationState.Experiment:
                     //we have a loader scene because we absoultely CANNOT miss any frames going to the VR device, even for loading
                     // reason: 
@@ -137,11 +127,6 @@ namespace PsychImmersion.Experiment
         {
             SelectedAnimal = type;
             GoToNextSimulationState(SimulationState.AnimalSelection);
-        }
-
-        public void IpdCalibrationComplete()
-        {
-            GoToNextSimulationState(SimulationState.IpdCalibration);
         }
 
         public void ExperimentComplete()
@@ -173,7 +158,6 @@ namespace PsychImmersion.Experiment
         {
             Init,
             AnimalSelection,
-            IpdCalibration,
             Experiment,
             PostExperiment
         }
