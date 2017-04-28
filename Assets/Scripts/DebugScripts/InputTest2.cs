@@ -9,8 +9,8 @@ namespace PsychImmersion.DebugScripts
         void Start ()
         {
             Debug.Log(string.Join(", ", Input.GetJoystickNames()));
-            CrossPlatformInputManager.Instance.NextButtonPressed += NextButtonPressed;
-            CrossPlatformInputManager.Instance.BackButtonPressed += BackButtonPressed;
+            CrossPlatformInputManager.Instance.ConfirmButtonPressed += ConfirmButtonPressed;
+            CrossPlatformInputManager.Instance.AbortButtonPressed += AbortButtonPressed;
             CrossPlatformInputManager.Instance.DownButtonPressed += DownButtonPressed;
             CrossPlatformInputManager.Instance.UpButtonPressed += UpButtonPressed;
         }
@@ -18,8 +18,8 @@ namespace PsychImmersion.DebugScripts
         private void OnDestroy()
         {
             if (CrossPlatformInputManager.Instance == null) return;
-            CrossPlatformInputManager.Instance.NextButtonPressed -= NextButtonPressed;
-            CrossPlatformInputManager.Instance.BackButtonPressed -= BackButtonPressed;
+            CrossPlatformInputManager.Instance.ConfirmButtonPressed -= ConfirmButtonPressed;
+            CrossPlatformInputManager.Instance.AbortButtonPressed -= AbortButtonPressed;
             CrossPlatformInputManager.Instance.DownButtonPressed -= DownButtonPressed;
             CrossPlatformInputManager.Instance.UpButtonPressed -= UpButtonPressed;
         }
@@ -32,11 +32,11 @@ namespace PsychImmersion.DebugScripts
             Debug.Log("Down Pressed!");
         }
 
-        private void BackButtonPressed() {
+        private void AbortButtonPressed() {
             Debug.Log("Back Pressed!");
         }
 
-        private void NextButtonPressed() {
+        private void ConfirmButtonPressed() {
             Debug.Log("Next Pressed!");
         }
     }

@@ -47,22 +47,25 @@ namespace PsychImmersion.CrossPlatformInput
         //subscribe to these events to get button updates
         public event Action DownButtonPressed;
         public event Action UpButtonPressed;
-        public event Action NextButtonPressed;
-        public event Action BackButtonPressed;
+        public event Action ConfirmButtonPressed;
+        public event Action AbortButtonPressed;
+        public event Action NextLevelButtonPressed;
 
         //these will be true on any frame where these buttons are held
         public bool DownButtonDown { get; private set; }
         public bool UpButtonDown { get; private set; }
-        public bool NextButtonDown { get; private set; }
-        public bool BackButtonDown { get; private set; }
+        public bool ConfirmButtonDown { get; private set; }
+        public bool AbortButtonDown { get; private set; }
+        public bool NextLevelButtonDown { get; private set; }
 
         public float LookX { get; private set; }
         public float LookY { get; private set; }
 
         //Variables to keep track of the value of the various buttons last frame so we only fire events on the first frame the buttons are pressed
         private int _lastUpDownValue = 0;
-        private bool _nextButtonPressed = false;
-        private bool _backButtonPressed = false;
+        private bool _confirmButtonPressed = false;
+        private bool _abortButtonPressed = false;
+        private bool _nextLevelButtonPressed = false;
 
         private const float TriggerThreshold = 0.75f;
         private const float StickDeadZone = 0.1f;
@@ -124,10 +127,12 @@ namespace PsychImmersion.CrossPlatformInput
         private void SendInputEvents()
         {
             DoUpDownInput();
-            DoNextLevelInput();
-            DoBackButtonInput();
+            DoConfirmInput();
+            DoAbortButtonInput();
             DoLookInput();
+            DoNextLevelInput();
         }
+
 
         /// <summary>
         /// Look input is only done in non-vr mode, so we only poll the xbox controllers
@@ -151,17 +156,17 @@ namespace PsychImmersion.CrossPlatformInput
             //left controller
             if (LeftViveControllerConnected)
             {
-                if (UnityEngine.Input.GetKey("joystick " + _leftViveJoystickNumber + " button 8"))
+                if (Input.GetKey("joystick " + _leftViveJoystickNumber + " button 8"))
                 {
-                    var thumbPosition = UnityEngine.Input.GetAxis("Joystick " + _leftViveJoystickNumber + " Axis 2");
+                    var thumbPosition = Input.GetAxis("Joystick " + _leftViveJoystickNumber + " Axis 2");
                     return thumbPosition > 0 ? 1 : -1;
                 }
             }
 
             if (RightViveControllerConnected)
             {
-                if (UnityEngine.Input.GetKey("joystick " + _rightViveJoystickNumber + " button 9")) {
-                    var thumbPosition = UnityEngine.Input.GetAxis("Joystick " + _rightViveJoystickNumber + " Axis 5");
+                if (Input.GetKey("joystick " + _rightViveJoystickNumber + " button 9")) {
+                    var thumbPosition = Input.GetAxis("Joystick " + _rightViveJoystickNumber + " Axis 5");
                     return thumbPosition > 0 ? 1 : -1;
                 }
             }
@@ -170,7 +175,7 @@ namespace PsychImmersion.CrossPlatformInput
 
         private int PollOculusUpDown()
         {
-            return Mathf.RoundToInt(UnityEngine.Input.GetAxis("Joystick " + _oculusRemoteJoystickNumber + " Axis 7"));
+            return Mathf.RoundToInt(Input.GetAxis("Joystick " + _oculusRemoteJoystickNumber + " Axis 7"));
         }
 
         private int PollXboxUpDown()
@@ -178,9 +183,9 @@ namespace PsychImmersion.CrossPlatformInput
             var value = 0;
             foreach (var jn in _xboxJoystickNumbers)
             {
-                value = Mathf.RoundToInt(UnityEngine.Input.GetAxis("Joystick " + jn + " Axis 7"));
+                value = Mathf.RoundToInt(Input.GetAxis("Joystick " + jn + " Axis 7"));
                 if (value != 0) break;
-                var joystick = UnityEngine.Input.GetAxis("Joystick " + jn + " Axis 2");
+                var joystick = Input.GetAxis("Joystick " + jn + " Axis 2");
                 //this axis is inverted for some reason
                 if (joystick > 0.5)
                 {
@@ -222,41 +227,77 @@ namespace PsychImmersion.CrossPlatformInput
 
         #region NextLevelButton
 
-        private void DoNextLevelInput()
-        {
-            var newValue = PollNextButton();
-            NextButtonDown = newValue;
-            if (!_nextButtonPressed && newValue && NextButtonPressed != null) NextButtonPressed();
-            _nextButtonPressed = newValue;
+        private void DoNextLevelInput() {
+            var newValue = PollNextLevelButton();
+            NextLevelButtonDown = newValue;
+            if (!_nextLevelButtonPressed && newValue && NextLevelButtonPressed != null) NextLevelButtonPressed();
+            _nextLevelButtonPressed = newValue;
         }
 
-        private bool PollViveNextButton()
-        {
-            if (LeftViveControllerConnected)
-            {
-                if (UnityEngine.Input.GetAxis("Joystick " + _leftViveJoystickNumber + " Axis 9") > 0.95) return true;
+        private bool PollViveNextLevelButton() {
+            if (LeftViveControllerConnected) {
+                if (Input.GetAxis("Joystick " + _leftViveJoystickNumber + " Axis 9") > 0.95) return true;
             }
             if (RightViveControllerConnected) {
-                if (UnityEngine.Input.GetAxis("Joystick " + _rightViveJoystickNumber + " Axis 10") > 0.95) return true;
+                if (Input.GetAxis("Joystick " + _rightViveJoystickNumber + " Axis 10") > 0.95) return true;
             }
             return false;
         }
 
-        private bool PollOculusNextButton()
-        {
-            return UnityEngine.Input.GetKey("joystick " + _oculusRemoteJoystickNumber + " button 0");
+        private bool PollOculusNextLevelButton() {
+            return Input.GetKey("joystick " + _oculusRemoteJoystickNumber + " button 0");
         }
 
-        private bool PollXboxNextButton()
-        {
-            return _xboxJoystickNumbers.Any(jn => UnityEngine.Input.GetKey("joystick " + jn + " button 0"));
+        private bool PollXboxNextLevelButton() {
+            return _xboxJoystickNumbers.Any(jn => Input.GetKey("joystick " + jn + " button 2"));
         }
 
-        private bool PollNextButton()
+        private bool PollNextLevelButton() {
+            if (XboxControllerConnected && PollXboxNextLevelButton()) return true;
+            if (OculusRemoteConnected && PollOculusNextLevelButton()) return true;
+            if (ViveControllerConnected && PollViveNextLevelButton()) return true;
+            return false;
+        }
+
+        #endregion
+
+        #region ConfirmButton
+
+        private void DoConfirmInput()
         {
-            if (XboxControllerConnected && PollXboxNextButton()) return true;
-            if (OculusRemoteConnected && PollOculusNextButton()) return true;
-            if (ViveControllerConnected && PollViveNextButton()) return true;
+            var newValue = PollConfirmButton();
+            ConfirmButtonDown = newValue;
+            if (!_confirmButtonPressed && newValue && ConfirmButtonPressed != null) ConfirmButtonPressed();
+            _confirmButtonPressed = newValue;
+        }
+
+        private bool PollViveConfirmButton()
+        {
+            if (LeftViveControllerConnected)
+            {
+                if (Input.GetAxis("Joystick " + _leftViveJoystickNumber + " Axis 9") > 0.95) return true;
+            }
+            if (RightViveControllerConnected) {
+                if (Input.GetAxis("Joystick " + _rightViveJoystickNumber + " Axis 10") > 0.95) return true;
+            }
+            return false;
+        }
+
+        private bool PollOculusConfirmButton()
+        {
+            return Input.GetKey("joystick " + _oculusRemoteJoystickNumber + " button 0");
+        }
+
+        private bool PollXboxConfirmButton()
+        {
+            return _xboxJoystickNumbers.Any(jn => Input.GetKey("joystick " + jn + " button 0"));
+        }
+
+        private bool PollConfirmButton()
+        {
+            if (XboxControllerConnected && PollXboxConfirmButton()) return true;
+            if (OculusRemoteConnected && PollOculusConfirmButton()) return true;
+            if (ViveControllerConnected && PollViveConfirmButton()) return true;
             return false;
         }
 
@@ -264,43 +305,43 @@ namespace PsychImmersion.CrossPlatformInput
 
         #region BackButton
 
-        private void DoBackButtonInput()
+        private void DoAbortButtonInput()
         {
-            var newValue = PollBackButton();
-            BackButtonDown = newValue;
-            if (!_backButtonPressed && newValue && BackButtonPressed != null) BackButtonPressed();
-            _backButtonPressed = newValue;
+            var newValue = PollAbortButton();
+            AbortButtonDown = newValue;
+            if (!_abortButtonPressed && newValue && AbortButtonPressed != null) AbortButtonPressed();
+            _abortButtonPressed = newValue;
         }
 
-        private bool PollViveBackButton()
+        private bool PollViveAbortButton()
         {
-            if (LeftViveControllerConnected && UnityEngine.Input.GetKey("joystick " + _leftViveJoystickNumber + " button 2")) return true;
-            if (RightViveControllerConnected && UnityEngine.Input.GetKey("joystick " + _rightViveJoystickNumber + " button 0")) return true;
+            if (LeftViveControllerConnected && Input.GetKey("joystick " + _leftViveJoystickNumber + " button 2")) return true;
+            if (RightViveControllerConnected && Input.GetKey("joystick " + _rightViveJoystickNumber + " button 0")) return true;
             return false;
         }
 
-        private bool PollOculusBackButton()
+        private bool PollOculusAbortButton()
         {
-            return UnityEngine.Input.GetKey("joystick " + _oculusRemoteJoystickNumber + " button 1");
+            return Input.GetKey("joystick " + _oculusRemoteJoystickNumber + " button 1");
         }
 
-        private bool PollXboxBackButton() {
+        private bool PollXboxAbortButton() {
             foreach (var n in _xboxJoystickNumbers)
             {
-                if (UnityEngine.Input.GetKey("joystick " + n + " button 1")) return true; //check b button
+                if (Input.GetKey("joystick " + n + " button 1")) return true; //check b button
 
-                var left = UnityEngine.Input.GetAxis("Joystick " + n + " Axis 9");
-                var right = UnityEngine.Input.GetAxis("Joystick " + n + " Axis 10");
+                var left = Input.GetAxis("Joystick " + n + " Axis 9");
+                var right = Input.GetAxis("Joystick " + n + " Axis 10");
                 if (left > TriggerThreshold && right > TriggerThreshold) return true; //check triggers
             }
             return false;
         }
 
-        private bool PollBackButton()
+        private bool PollAbortButton()
         {
-            if (XboxControllerConnected && PollXboxBackButton()) return true;
-            if (OculusRemoteConnected && PollOculusBackButton()) return true;
-            if (ViveControllerConnected && PollViveBackButton()) return true;
+            if (XboxControllerConnected && PollXboxAbortButton()) return true;
+            if (OculusRemoteConnected && PollOculusAbortButton()) return true;
+            if (ViveControllerConnected && PollViveAbortButton()) return true;
             return false;
         }
 
@@ -316,7 +357,7 @@ namespace PsychImmersion.CrossPlatformInput
             bool viveWasConnected = ViveControllerConnected;
             bool anyControllersWereConnected = AnyControllerConnected;
             var oldXboxControllerCount = _xboxJoystickNumbers.Count;
-            var joysticks = UnityEngine.Input.GetJoystickNames();
+            var joysticks = Input.GetJoystickNames();
             _xboxJoystickNumbers.Clear();
             //Detect joystick changes
             for (var i = 0; i < joysticks.Length; i++)

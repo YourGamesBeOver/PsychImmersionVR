@@ -65,7 +65,7 @@ namespace PsychImmersion.UI
         {
             CrossPlatformInputManager.Instance.UpButtonPressed += Increment;
             CrossPlatformInputManager.Instance.DownButtonPressed += Decrement;
-            CrossPlatformInputManager.Instance.NextButtonPressed += Submit;
+            CrossPlatformInputManager.Instance.ConfirmButtonPressed += Submit;
             SetStressLevel(_curLevel);
             Fader.FadeOut();
         }
@@ -75,7 +75,7 @@ namespace PsychImmersion.UI
             if (CrossPlatformInputManager.Instance == null) return;
             CrossPlatformInputManager.Instance.UpButtonPressed -= Increment;
             CrossPlatformInputManager.Instance.DownButtonPressed -= Decrement;
-            CrossPlatformInputManager.Instance.NextButtonPressed -= Submit;
+            CrossPlatformInputManager.Instance.ConfirmButtonPressed -= Submit;
         }
 
 //#if UNITY_EDITOR

@@ -33,8 +33,9 @@ namespace PsychImmersion.DebugScripts
             sb.AppendLine("<color=green>Input:</color>");
             sb.AppendLine("<color=blue>Up</color>: " + CrossPlatformInputManager.Instance.UpButtonDown);
             sb.AppendLine("<color=blue>Down</color>: " + CrossPlatformInputManager.Instance.DownButtonDown);
-            sb.AppendLine("<color=blue>Next</color>: " + CrossPlatformInputManager.Instance.NextButtonDown);
-            sb.AppendLine("<color=blue>Back</color>: " + CrossPlatformInputManager.Instance.BackButtonDown);
+            sb.AppendLine("<color=blue>Confirm</color>: " + CrossPlatformInputManager.Instance.ConfirmButtonDown);
+            sb.AppendLine("<color=blue>NextLevel</color>: " + CrossPlatformInputManager.Instance.NextLevelButtonDown);
+            sb.AppendLine("<color=blue>Abort</color>: " + CrossPlatformInputManager.Instance.AbortButtonDown);
 
             sb.AppendLine("<color=green>VRSettings:</color>");
             sb.AppendLine("<color=blue>isDeviceActive</color>: " + VRSettings.isDeviceActive);

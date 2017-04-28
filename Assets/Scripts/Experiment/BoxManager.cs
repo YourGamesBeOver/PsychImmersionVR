@@ -12,8 +12,6 @@ namespace PsychImmersion.Experiment
 
         public GameObject BeePrefab, MousePrefab, SpiderPrefab;
 
-
-        private BoxState _curState;
         private Animation _animation;
 
         public enum BoxState
@@ -39,7 +37,6 @@ namespace PsychImmersion.Experiment
         // Use this for initialization
         void Start ()
         {
-            _curState = BoxState.Hidden;
             _targetDistanceFromPlayer = transform.position.z;
         }
 
@@ -79,8 +76,6 @@ namespace PsychImmersion.Experiment
 
         public void TransitionToState(BoxState state)
         {
-            _curState = state;
-
             switch (state)
             {
                 case BoxState.Hidden:

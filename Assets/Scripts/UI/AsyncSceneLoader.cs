@@ -41,7 +41,6 @@ namespace PsychImmersion.UI {
 
         private string[] _scenesToLoad;
         private AsyncOperation[] _asyncOperations;
-        private int _scenesLoaded = 0;
 
         // Use this for initialization
         void Start() {
