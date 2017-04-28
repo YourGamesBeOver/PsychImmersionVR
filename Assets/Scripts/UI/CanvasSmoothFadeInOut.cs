@@ -29,7 +29,11 @@ namespace PsychImmersion.UI
         {
             _group.alpha = InitiallyVisible ? _targetAlpha : 0f;
             if(FadeInOnEnable) StartCoroutine(FadeInCorutine());
-            if(!InitiallyVisible && DisableWhenInvisible) gameObject.SetActive(true);
+        }
+
+        private void Start()
+        {
+            if (!InitiallyVisible && DisableWhenInvisible) gameObject.SetActive(false);
         }
 
         public void FadeOut(Action callback)
