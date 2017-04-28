@@ -111,7 +111,7 @@ public class beeAI : DifficultySensitiveBehaviour {
     {
         switch (diff)
         {
-            case Difficulity.Adjustment:
+            case Difficulity.Tutorial:
                 //do nothing; the simulation has not started
                 break;
             case Difficulity.Beginner:
@@ -272,7 +272,7 @@ public class beeAI : DifficultySensitiveBehaviour {
 
     public override void SetLevel(Difficulity level)
     {
-        if (level != Difficulity.Adjustment)
+        if (level != Difficulity.Tutorial)
         {
             enabled = true;
             rb.isKinematic = false;
@@ -288,7 +288,7 @@ public class beeAI : DifficultySensitiveBehaviour {
         diff = level;
         switch (diff)
         {
-            case Difficulity.Adjustment:
+            case Difficulity.Tutorial:
                 //do nothing
                 break;
             case Difficulity.Beginner:

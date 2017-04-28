@@ -33,19 +33,12 @@ namespace PsychImmersion.Experiment
         }
 
         private bool _boxIsMoving = false;
+        private BoxState _curState = BoxState.Hidden;
 
         // Use this for initialization
         void Start ()
         {
             _targetDistanceFromPlayer = transform.position.z;
-        }
-
-        // Update is called once per frame
-        void Update () {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                TransitionToState(BoxState.Normal);
-            }
         }
 
         public override void Awake()
@@ -54,32 +47,58 @@ namespace PsychImmersion.Experiment
             _animation = GetComponent<Animation>();
         }
 
-        public override void SetLevel(Difficulity level)
+        private void BoxDoneMoving()
         {
-            switch (level)
+            switch (DifficultyManager.Instance.CurrentDifficulty)
             {
-                case Difficulity.Adjustment:
+                case Difficulity.Tutorial:
                     break;
                 case Difficulity.Beginner:
-                    TransitionToState(BoxState.Normal);
+                    if(_curState != BoxState.Normal) TransitionToState(BoxState.Normal);
                     break;
                 case Difficulity.Intermediate:
-                    TransitionToState(BoxState.Opened);
+                    if (_curState != BoxState.Opened) TransitionToState(BoxState.Opened);
                     break;
                 case Difficulity.Advanced:
-                    TransitionToState(BoxState.OnFloor);
+                    if (_curState != BoxState.OnFloor) TransitionToState(BoxState.OnFloor);
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException("level", level, null);
             }
         }
 
-        public void TransitionToState(BoxState state)
+        public override void SetLevel(Difficulity level)
         {
+            MoveTableForDifficulty(level);
+            //the animations are actually played in BoxDoneMoving
+        }
+
+        private void MoveTableForDifficulty(Difficulity level)
+        {
+            switch (level)
+            {
+                case Difficulity.Beginner:
+                case Difficulity.Intermediate:
+                case Difficulity.Advanced:
+                    SetDistanceFromPlayer(2f);
+                    break;
+                case Difficulity.Beginner2:
+                case Difficulity.Intermediate2:
+                case Difficulity.Advanced2:
+                    SetDistanceFromPlayer(1.25f);
+                    break;
+                
+                case Difficulity.Beginner3:
+                case Difficulity.Intermediate3:
+                case Difficulity.Advanced3:
+                    SetDistanceFromPlayer(0.5f);
+                    break;
+            }
+        }
+
+        private void TransitionToState(BoxState state)
+        {
+            _curState = state;
             switch (state)
             {
-                case BoxState.Hidden:
-                    break;
                 case BoxState.Normal:
                     InstantiateAnimal(ExperimentManager.Instance.SelectedAnimal);
                     _animation.Play("TableRise");
@@ -90,8 +109,6 @@ namespace PsychImmersion.Experiment
                 case BoxState.OnFloor:
                     _animation.Play("TableSink");
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException("state", state, null);
             }
         }
 
@@ -123,6 +140,7 @@ namespace PsychImmersion.Experiment
             oldPos.z = _targetDistanceFromPlayer;
             transform.position = oldPos;
             _boxIsMoving = false;
+            BoxDoneMoving();
         }
 
         public void InstantiateAnimal(AnimalType type)

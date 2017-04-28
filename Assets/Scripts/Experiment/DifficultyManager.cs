@@ -32,7 +32,7 @@ namespace PsychImmersion.Experiment
         void Awake()
         {
             Instance = this;
-            CurrentDifficulty = Difficulity.Adjustment;
+            CurrentDifficulty = Difficulity.Tutorial;
         }
 
         // Use this for initialization
@@ -66,7 +66,7 @@ namespace PsychImmersion.Experiment
                 ExperimentManager.Instance.ExperimentComplete();
                 return;
             }
-            if (CurrentDifficulty == Difficulity.Adjustment)
+            if (CurrentDifficulty == Difficulity.Tutorial)
             {
                 StartCoroutine(StressLevelPromptCoroutine());
                 DataRecorder.RecordEvent(DataEvent.ExperimentStart);

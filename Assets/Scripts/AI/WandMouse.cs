@@ -334,7 +334,7 @@ public class WandMouse : DifficultySensitiveBehaviour
 
     public override void SetLevel(Difficulity level)
     {
-        if (level != Difficulity.Adjustment) {
+        if (level != Difficulity.Tutorial) {
             enabled = true;
             rb.isKinematic = false;
         } else {

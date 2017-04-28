@@ -2,9 +2,15 @@
 {
     public enum Difficulity
     {
-        Adjustment,
+        Tutorial,
         Beginner,
+        Beginner2,
+        Beginner3,
         Intermediate,
-        Advanced
+        Intermediate2,
+        Intermediate3,
+        Advanced,
+        Advanced2,
+        Advanced3
     }
 }
