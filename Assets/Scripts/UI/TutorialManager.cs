@@ -170,6 +170,7 @@ namespace PsychImmersion.UI
             StressPanel.Prompt(float.PositiveInfinity, value => {
                 DataRecorder.RecordEvent(DataEvent.BaselineAnxietyLevel, value);
                 GoToStage(Stage.MovingOn);
+                DifficultyManager.Instance.SetBaseline(value);
                 return false;
             });
         }

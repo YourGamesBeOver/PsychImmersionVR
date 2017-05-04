@@ -55,6 +55,10 @@ namespace PsychImmersion.Experiment
             NextLevelPanel.Prompt();
         }
 
+        internal void SetBaseline(int value) {
+            _lastStressLevel = value;
+        }
+
         private void NextDifficultyLevel()
         {
             if (CurrentDifficulty == Difficulity.Advanced3)
@@ -106,6 +110,7 @@ namespace PsychImmersion.Experiment
         }
 
 #endif
+
 
     }
 }
