@@ -21,7 +21,9 @@ namespace PsychImmersion.UI
 
         private SubmitCallback _submitCallback = null;
 
-        private int _curLevel = 5;
+        private float lastTimeout;
+
+        private int _curLevel = 0;
         //this value is false when accepting user input
         private bool _submitted = true;
 
@@ -39,12 +41,14 @@ namespace PsychImmersion.UI
         {
             if (_submitted) return;
             if (_curLevel < MaxStressLevel) SetStressLevel(_curLevel+1);
+            ResetTimeout();
         }
 
         public void Decrement()
         {
             if (_submitted) return;
             if (_curLevel > 0) SetStressLevel(_curLevel-1);
+            ResetTimeout();
         }
 
         public void Submit()
@@ -60,12 +64,24 @@ namespace PsychImmersion.UI
             Fader.FadeOut();
         }
 
+        public void ResetTimeout()
+        {
+            if (_submitted) return;
+            CancelInvoke("Submit");
+            if (!float.IsPositiveInfinity(lastTimeout)) Invoke("Submit", lastTimeout);
+        }
+
         public int CurrentStressLevel { get { return _curLevel; } }
 
         public void Prompt(float timeout, SubmitCallback callback = null)
         {
+            if (!_submitted)
+            {
+                Debug.LogWarning("StressSelectorPanel multiple prompt requests!");
+            }
             _submitCallback = callback;
             Fader.FadeIn();
+            lastTimeout = timeout;
             if(!float.IsPositiveInfinity(timeout)) Invoke("Submit", timeout);
             _submitted = false;
         }
