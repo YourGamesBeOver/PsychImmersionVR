@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace PsychImmersion.Experiment
@@ -19,7 +18,7 @@ namespace PsychImmersion.Experiment
             Hidden,
             Normal,
             Opened,
-            OnFloor
+            BoxHidden
         }
 
         public float MoveSpeed = 0.1f;
@@ -60,7 +59,7 @@ namespace PsychImmersion.Experiment
                     if (_curState != BoxState.Opened) TransitionToState(BoxState.Opened);
                     break;
                 case Difficulity.Advanced:
-                    if (_curState != BoxState.OnFloor) TransitionToState(BoxState.OnFloor);
+                    if (_curState != BoxState.BoxHidden) TransitionToState(BoxState.BoxHidden);
                     break;
             }
         }
@@ -68,7 +67,7 @@ namespace PsychImmersion.Experiment
         public override void SetLevel(Difficulity level)
         {
             MoveTableForDifficulty(level);
-            //the animations are actually played in BoxDoneMoving
+            //the animations are played in BoxDoneMoving
         }
 
         private void MoveTableForDifficulty(Difficulity level)
@@ -106,8 +105,8 @@ namespace PsychImmersion.Experiment
                 case BoxState.Opened:
                     _animation.Play("BoxOpen");
                     break;
-                case BoxState.OnFloor:
-                    _animation.Play("TableSink");
+                case BoxState.BoxHidden:
+                    _animation.Play("BoxHide");
                     break;
             }
         }
@@ -145,15 +144,15 @@ namespace PsychImmersion.Experiment
 
         public void InstantiateAnimal(AnimalType type)
         {
-            if ((type & AnimalType.Bee) == AnimalType.Bee)
+            if (type.HasFlag(AnimalType.Bee))
             {
                 Instantiate(BeePrefab, BoxRootTransform, false);
             }
-            if ((type & AnimalType.Mouse) == AnimalType.Mouse)
+            if (type.HasFlag(AnimalType.Mouse))
             {
                 Instantiate(MousePrefab, BoxRootTransform, false);
             }
-            if ((type & AnimalType.Spider) == AnimalType.Spider)
+            if (type.HasFlag(AnimalType.Spider))
             {
                 Instantiate(SpiderPrefab, BoxRootTransform, false);
             }

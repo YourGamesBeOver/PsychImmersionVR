@@ -18,7 +18,10 @@ namespace PsychImmersion
 
         public static void SetLevelForAll(Difficulity level)
         {
-            foreach(var b in Behaviours) b.SetLevel(level);
+            foreach (var b in Behaviours)
+            {
+                if(b != null) b.SetLevel(level);
+            }
         }
 
         public virtual void Awake()
@@ -26,7 +29,7 @@ namespace PsychImmersion
             RegisteredBehaviours[GetInstanceID()] = this;
         }
 
-        private void OnDestroy()
+        public virtual void OnDestroy()
         {
             RegisteredBehaviours.Remove(GetInstanceID());
         }

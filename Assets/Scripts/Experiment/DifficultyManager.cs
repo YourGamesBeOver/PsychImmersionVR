@@ -57,7 +57,7 @@ namespace PsychImmersion.Experiment
 
         private void NextDifficultyLevel()
         {
-            if (CurrentDifficulty == Difficulity.Advanced)
+            if (CurrentDifficulty == Difficulity.Advanced3)
             {
                 //we are done with the experiment
                 DataRecorder.RecordEvent(DataEvent.ExperimentEnded);
@@ -95,6 +95,17 @@ namespace PsychImmersion.Experiment
             }
             // ReSharper disable once IteratorNeverReturns
         }
+
+#if DEBUG
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                PromptForNextDifficultyLevel();
+            }
+        }
+
+#endif
 
     }
 }
