@@ -2103,6 +2103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoxRootTransform: {fileID: 4578766089919930}
+  CameraTransform: {fileID: 0}
+  Look: {fileID: 0}
   BeePrefab: {fileID: 1717759105813322, guid: 33918535f61e55342b13c6bbacb85592, type: 2}
   MousePrefab: {fileID: 1000013850092064, guid: 9bbe89d7f60288b428ee9bff718c75d9,
     type: 2}

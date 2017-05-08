@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using PsychImmersion.CrossPlatformInput;
 using UnityEngine;
+using UnityEngine.VR;
 
 namespace PsychImmersion.Experiment
 {
@@ -8,6 +10,10 @@ namespace PsychImmersion.Experiment
     {
         //this is the transform that the animal prefab should be a child of
         public Transform BoxRootTransform;
+
+        public Transform CameraTransform;
+
+        public ControllerLook Look;
 
         public GameObject BeePrefab, MousePrefab, SpiderPrefab;
 
@@ -101,14 +107,42 @@ namespace PsychImmersion.Experiment
                 case BoxState.Normal:
                     InstantiateAnimal(ExperimentManager.Instance.SelectedAnimal);
                     _animation.Play("TableRise");
+                    LockViewUntilAnimationComplete();
                     break;
                 case BoxState.Opened:
                     _animation.Play("BoxOpen");
+                    LockViewUntilAnimationComplete();
                     break;
                 case BoxState.BoxHidden:
                     _animation.Play("BoxHide");
+                    LockViewUntilAnimationComplete();
                     break;
             }
+        }
+
+        private void LockViewUntilAnimationComplete()
+        {
+            if (VRSettings.isDeviceActive || CameraTransform == null) return;
+            if (Look != null) Look.enabled = false;
+            StartCoroutine(AnimationLookCoroutine());
+        }
+
+        private IEnumerator AnimationLookCoroutine()
+        {
+            while (_animation.isPlaying)
+            {
+                CameraTransform.LookAt(BoxRootTransform);
+                yield return null;
+            }
+            //if the box is moving, MoveBoxCoroutine will re-enable the ControllerLook
+            if (Look != null && !_boxIsMoving) Look.enabled = true;
+        }
+
+        private void CenterCamera()
+        {
+            if (VRSettings.isDeviceActive) return;
+            var rot = CameraTransform.rotation;
+            rot.
         }
 
         public void SetDistanceFromPlayer(float newDistance)
@@ -116,9 +150,9 @@ namespace PsychImmersion.Experiment
             _targetDistanceFromPlayer = newDistance;
             if (!_boxIsMoving)
             {
+                if (!VRSettings.isDeviceActive && Look != null) Look.enabled = false;
                 StartCoroutine(MoveBoxCoroutine());
             }
-
         }
 
         private IEnumerator MoveBoxCoroutine()
@@ -133,11 +167,14 @@ namespace PsychImmersion.Experiment
                 oldPos = transform.position;
                 oldPos.z += delta;
                 transform.position = oldPos;
+                if(!VRSettings.isDeviceActive && CameraTransform != null) CameraTransform.LookAt(BoxRootTransform);
                 yield return null; //wait for Update
             }
             oldPos = transform.position;
             oldPos.z = _targetDistanceFromPlayer;
             transform.position = oldPos;
+            if (!VRSettings.isDeviceActive && CameraTransform != null) CameraTransform.LookAt(BoxRootTransform);
+            if (!VRSettings.isDeviceActive && Look != null) Look.enabled = true;
             _boxIsMoving = false;
             BoxDoneMoving();
         }
