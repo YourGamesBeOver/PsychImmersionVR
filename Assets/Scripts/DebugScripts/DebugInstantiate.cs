@@ -14,5 +14,13 @@ namespace PsychImmersion.DebugScripts
             Instantiate(Prefab, this.gameObject.transform, false);
             this.enabled = false;
         }
+
+#if UNITY_EDITOR
+        [ContextMenu("Instantiate Now")]
+        private void InstantiateNowEditor()
+        {
+            Instantiate(Prefab, this.gameObject.transform, false);
+        }
+#endif
     }
 }

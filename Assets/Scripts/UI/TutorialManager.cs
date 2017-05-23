@@ -46,8 +46,9 @@ namespace PsychImmersion.UI
             CrossPlatformInputManager.Instance.DownButtonPressed += OnUpDownPressed;
         }
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
+            base.OnDestroy();
             if (CrossPlatformInputManager.Instance != null)
             {
                 CrossPlatformInputManager.Instance.UpButtonPressed -= OnUpDownPressed;

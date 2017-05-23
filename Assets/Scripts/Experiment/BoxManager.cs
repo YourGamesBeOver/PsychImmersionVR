@@ -19,6 +19,8 @@ namespace PsychImmersion.Experiment
 
         private Animation _animation;
 
+        private Difficulity _lastSetDifficulity = Difficulity.Tutorial;
+
         public enum BoxState
         {
             Hidden,
@@ -54,7 +56,7 @@ namespace PsychImmersion.Experiment
 
         private void BoxDoneMoving()
         {
-            switch (DifficultyManager.Instance.CurrentDifficulty)
+            switch (_lastSetDifficulity)
             {
                 case Difficulity.Tutorial:
                     break;
@@ -72,6 +74,7 @@ namespace PsychImmersion.Experiment
 
         public override void SetLevel(Difficulity level)
         {
+            _lastSetDifficulity = level;
             MoveTableForDifficulty(level);
             //the animations are played in BoxDoneMoving
         }
@@ -120,6 +123,12 @@ namespace PsychImmersion.Experiment
             }
         }
 
+        private void BeginExpandingWalls()
+        {
+            //this tells the WallExpander to move the walls
+            BroadcastMessage("ExpandWalls", SendMessageOptions.DontRequireReceiver);
+        }
+
         private void LockViewUntilAnimationComplete()
         {
             if (VRSettings.isDeviceActive || CameraTransform == null) return;
@@ -138,12 +147,12 @@ namespace PsychImmersion.Experiment
             if (Look != null && !_boxIsMoving) Look.enabled = true;
         }
 
-        private void CenterCamera()
-        {
-            if (VRSettings.isDeviceActive) return;
-            var rot = CameraTransform.rotation;
-            rot.
-        }
+        //private void CenterCamera()
+        //{
+        //    if (VRSettings.isDeviceActive) return;
+        //    var rot = CameraTransform.rotation;
+        //    rot.
+        //}
 
         public void SetDistanceFromPlayer(float newDistance)
         {
@@ -194,5 +203,29 @@ namespace PsychImmersion.Experiment
                 Instantiate(SpiderPrefab, BoxRootTransform, false);
             }
         }
+
+
+#if UNITY_EDITOR
+        [ContextMenu("Set Difficulty to Beginner")]
+        private void SetDifficultyBeginnerEditor()
+        {
+            SetLevel(Difficulity.Beginner);
+        }
+        [ContextMenu("Set Difficulty to Intermediate")]
+        private void SetDifficultyIntermediateEditor() {
+            SetLevel(Difficulity.Intermediate);
+        }
+        [ContextMenu("Set Difficulty to Advanced")]
+        private void SetDifficultyAdvancedEditor() {
+            SetLevel(Difficulity.Advanced);
+        }
+
+        [ContextMenu("Increase Difficulty")]
+        private void IncreaseDifficultyEditor() {
+            SetLevel(_lastSetDifficulity + 1);
+        }
+
+
+#endif
     }
 }

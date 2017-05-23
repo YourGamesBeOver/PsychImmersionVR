@@ -57,9 +57,6 @@ public class WandMouse : DifficultySensitiveBehaviour
     WaitForSeconds twoPointFive;
     WaitForSeconds one;
 
-    //for the coroutine which adds wall force
-    public bool notLevel3 = true;
-
     public float MinWallDistance = 0.2f;
     public float WallStrength = 0.1f;
 
@@ -213,7 +210,7 @@ public class WandMouse : DifficultySensitiveBehaviour
     /// <returns></returns>
     IEnumerator AdjustWallForce()
     {
-        while (notLevel3)
+        while (true)
         {
             // one for each wall, wall is target.position
             float distanceToTarget1 = Mathf.Min(MinWallDistance, transform.localPosition.x - wall1.localPosition.x);
@@ -340,8 +337,6 @@ public class WandMouse : DifficultySensitiveBehaviour
         } else {
             enabled = false;
             rb.isKinematic = true;
-            return;
         }
-        notLevel3 = level != Difficulity.Advanced;
     }
 }
