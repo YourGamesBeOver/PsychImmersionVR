@@ -106,7 +106,7 @@ namespace PsychImmersion.UI
                     break;
                 case Stage.StressPre:
                     ControllerPanelFader.FadeOut();
-                    GoToStageAfter(Stage.StressUpDown, 10f);
+                    GoToStageAfter(Stage.StressUpDown, 15f);
                     break;
                 case Stage.StressUpDown:
                     ControllerPanelFader.FadeIn();
@@ -155,7 +155,7 @@ namespace PsychImmersion.UI
                 case Stage.Look:
                     return LookText;
                 case Stage.StressPre:
-                    return string.Format(StressIntroText, ExperimentManager.Instance.GetAnimalString());
+                    return string.Format(StressIntroText, ExperimentManager.Instance.GetAnimalString().ToLower());
                 case Stage.StressUpDown:
                     return StressUpDownText;
                 case Stage.StressConfirm:
