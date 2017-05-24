@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fader: {fileID: 114573149177571192}
+  Text: {fileID: 114452393501428344}
 --- !u!114 &114913021791641348
 MonoBehaviour:
   m_ObjectHideFlags: 1

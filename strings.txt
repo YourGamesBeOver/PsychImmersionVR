@@ -1,0 +1,31 @@
+# strings.txt
+# Use this file to specify all the text used in the experiment
+# Lines beginning with '#' will be ignored
+
+# Tutorial Text
+Tutorial_WelcomeText=Welcome!{newline}Let's get familiar with the controls.
+Tutorial_AbortText=At any time, hold {button_b} or both triggers to abort the experiment.
+Tutorial_LookText=You can use {stick_right} to look around the room.
+Tutorial_StressIntroText=You will start with the {animal} in a cage 2m across the rooom.  The cage door will be closed; the {animal} cannot get out.
+Tutorial_StressUpDownText=Knowing what you are about to see, move {stick_left} or {dpad} up or down to select your anxiety level on a scale of 0-10 with 0 being no anxiety and 10 being the highest anxiety you have ever experienced.
+Tutorial_StressConfirmText=Press {button_a} to confirm your initial anxiety level. You will be asked again for your anxiety level several times throughout the experiment.
+Tutorial_NextLevelText=At times, prompts like the one to the right will appear.  When they do, press {button_x} when you are ready to move on to the next level. Press {button_x} to begin.
+
+# Next level prompt descriptions
+NextLevelPanel_MessagePrefix=Press {button_x} to go on when ready.
+NextLevelPanel_Beginner1Description=A cage containing the {animal} will appear on a table about 6.5 feet in front of you.
+NextLevelPanel_Beginner2Description=The cage will move about two feet closer to you and remain closed.
+NextLevelPanel_Beginner3Description=The cage will move directly in front of you and remain closed.
+NextLevelPanel_Intermediate1Description=The cage will return to its starting position and the top will open. The {animal} will not leave the cage.
+NextLevelPanel_Intermediate2Description=The cage will move about two feet closer to you and remain open.
+NextLevelPanel_Intermediate3Description=The cage will move directly in front of you and remain open.
+NextLevelPanel_Advanced1Description=The cage will return to its starting position and disappear. The {animal} will be free, but will stay on or above the table.
+NextLevelPanel_Advanced2Description=The {animal} will move about two feet closer to you.
+NextLevelPanel_Advanced3Description=The {animal} will move directly in front of you.
+NextLevelPanel_EndDescription=The experiment will end.
+
+# Various UI panels
+UI_Abort=Hold to abort
+UI_StressPanelText=Select Anxiety Level
+UI_StressPanelSubmitText={button_a} Submit
+UI_WaitForResearcher=Please remove the device and await instructions from the researcher

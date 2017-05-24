@@ -22,22 +22,6 @@ namespace PsychImmersion.UI
 
         private bool _sawUpDown = false;
 
-        private const string WelcomeText = "Welcome!\nLet's get familiar with the controls.";
-
-        private const string AbortText =
-            "At any time, hold <color=red>\uE974</color> or both triggers to abort the experiment.";
-
-        private const string LookText = "You can use \uE9B6 to look around the room.";
-
-        private const string StressIntroText =
-            "You will start with the {0} in a cage 2m across the rooom.  The cage door will be closed; the {0} cannot get out.";
-
-        private const string StressUpDownText = "Knowing what you are about to see, move \uE9B5 or \uE9AA up or down to select your anxiety level on a scale of 0-10 with 0 being no anxiety and 10 being the highest anxiety you have ever experienced.";
-        private const string StressConfirmText = "Press <color=green>\uE994</color> to confirm your initial anxiety level. You will be asked again for your anxiety level several times throughout the experiment.";
-
-        private const string NextLevelText =
-            "At times, prompts like the one to the right will appear.  When they do, press <color=blue>\uE997</color> when you are ready to move on to the next level. Press <color=blue>\uE997</color> to begin.";
-
         // Use this for initialization
         void Start () {
             ControllerRenderer.Hide(XboxControllerRenderer.XboxButton.All);
@@ -149,19 +133,19 @@ namespace PsychImmersion.UI
             switch (stage)
             {
                 case Stage.Welcome:
-                    return WelcomeText;
+                    return StringManager.GetString("Tutorial_WelcomeText");
                 case Stage.Abort:
-                    return AbortText;
+                    return StringManager.GetString("Tutorial_AbortText");
                 case Stage.Look:
-                    return LookText;
+                    return StringManager.GetString("Tutorial_LookText");
                 case Stage.StressPre:
-                    return string.Format(StressIntroText, ExperimentManager.Instance.GetAnimalString().ToLower());
+                    return StringManager.GetString("Tutorial_StressIntroText");
                 case Stage.StressUpDown:
-                    return StressUpDownText;
+                    return StringManager.GetString("Tutorial_StressUpDownText");
                 case Stage.StressConfirm:
-                    return StressConfirmText;
+                    return StringManager.GetString("Tutorial_StressConfirmText");
                 case Stage.MovingOn:
-                    return NextLevelText;
+                    return StringManager.GetString("Tutorial_NextLevelText");
                 default:
                     throw new ArgumentOutOfRangeException("stage", stage, null);
             }
