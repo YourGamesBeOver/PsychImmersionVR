@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using PsychImmersion;
 using PsychImmersion.Experiment;
 
@@ -272,17 +271,6 @@ public class beeAI : DifficultySensitiveBehaviour {
 
     public override void SetLevel(Difficulity level)
     {
-        if (level != Difficulity.Tutorial)
-        {
-            enabled = true;
-            rb.isKinematic = false;
-        }
-        else
-        {
-            enabled = false;
-            rb.isKinematic = true;
-            return;
-        }
         cWaypoint = 0;
         firstCollision = true;
         diff = level;
@@ -302,9 +290,6 @@ public class beeAI : DifficultySensitiveBehaviour {
             case Difficulity.Advanced:
                 currentWaypoints = waypointsAdvanced;
                 currentWaypoints[0].tag = "advanced current";
-                break;
-            default:
-                Debug.LogError("Invalid level selected", this);
                 break;
         }
     }

@@ -27,6 +27,7 @@ namespace PsychImmersion.UI
         private void OnNextLevelButton()
         {
             if (!_visible) return;
+            Debug.Log("Next Level prompt confirmed!");
             if (OnConfirm != null) OnConfirm();
             _visible = false;
             Fader.FadeOut();

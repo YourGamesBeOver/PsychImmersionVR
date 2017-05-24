@@ -108,7 +108,7 @@ namespace PsychImmersion.Experiment
             switch (state)
             {
                 case BoxState.Normal:
-                    InstantiateAnimal(ExperimentManager.Instance.SelectedAnimal);
+                    StartCoroutine(WaitOneFrameAndInstantiateAnimals());
                     _animation.Play("TableRise");
                     LockViewUntilAnimationComplete();
                     break;
@@ -186,6 +186,12 @@ namespace PsychImmersion.Experiment
             if (!VRSettings.isDeviceActive && Look != null) Look.enabled = true;
             _boxIsMoving = false;
             BoxDoneMoving();
+        }
+
+        public IEnumerator WaitOneFrameAndInstantiateAnimals()
+        {
+            yield return null;
+            InstantiateAnimal(ExperimentManager.Instance.SelectedAnimal);
         }
 
         public void InstantiateAnimal(AnimalType type)

@@ -3,7 +3,7 @@ using System.Collections;
 using PsychImmersion;
 using PsychImmersion.Experiment;
 
-public class WandMouse : DifficultySensitiveBehaviour
+public class WandMouse : MonoBehaviour
 {
     //rigidbody of the mouse
     Rigidbody rb;
@@ -327,16 +327,5 @@ public class WandMouse : DifficultySensitiveBehaviour
         yield return one;
         isStopped = false;
         
-    }
-
-    public override void SetLevel(Difficulity level)
-    {
-        if (level != Difficulity.Tutorial) {
-            enabled = true;
-            rb.isKinematic = false;
-        } else {
-            enabled = false;
-            rb.isKinematic = true;
-        }
     }
 }

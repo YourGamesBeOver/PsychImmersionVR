@@ -30,10 +30,10 @@ namespace PsychImmersion.UI
         private const string LookText = "You can use \uE9B6 to look around the room.";
 
         private const string StressIntroText =
-            "You will be prompted for your stress level.  Let's try it now to get a baseline reading.";
+            "You will start with the {0} in a cage 2m across the rooom.  The cage door will be closed; the {0} cannot get out.";
 
-        private const string StressUpDownText = "Move \uE9B5 or \uE9AA up or down to select your stress level.";
-        private const string StressConfirmText = "Press <color=green>\uE994</color> to confirm your stress level.";
+        private const string StressUpDownText = "Knowing what you are about to see, move \uE9B5 or \uE9AA up or down to select your anxiety level on a scale of 0-10 with 0 being no anxiety and 10 being the highest anxiety you have ever experienced.";
+        private const string StressConfirmText = "Press <color=green>\uE994</color> to confirm your initial anxiety level. You will be asked again for your anxiety level several times throughout the experiment.";
 
         private const string NextLevelText =
             "At times, prompts like the one to the right will appear.  When they do, press <color=blue>\uE997</color> when you are ready to move on to the next level. Press <color=blue>\uE997</color> to begin.";
@@ -62,9 +62,9 @@ namespace PsychImmersion.UI
             {
                 TutorialPanelFader.FadeOut(() =>
                 {
-                    Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                 });
-                ControllerPanelFader.FadeOut(() => Destroy(ControllerPanelFader.gameObject));
+                ControllerPanelFader.FadeOut(() => ControllerPanelFader.gameObject.SetActive(false));
             }
         }
 
@@ -155,7 +155,7 @@ namespace PsychImmersion.UI
                 case Stage.Look:
                     return LookText;
                 case Stage.StressPre:
-                    return StressIntroText;
+                    return string.Format(StressIntroText, ExperimentManager.Instance.GetAnimalString());
                 case Stage.StressUpDown:
                     return StressUpDownText;
                 case Stage.StressConfirm:

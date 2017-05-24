@@ -20,7 +20,10 @@ namespace PsychImmersion
         {
             foreach (var b in Behaviours)
             {
-                if(b != null) b.SetLevel(level);
+                if (b != null)
+                {
+                    b.SetLevel(level);
+                }
             }
         }
 
